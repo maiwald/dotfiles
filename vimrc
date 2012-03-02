@@ -1,0 +1,85 @@
+set nocompatible
+
+" vundle
+
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+Bundle 'kien/ctrlp.vim'
+Bundle 'vim-scripts/VimClojure'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'scrooloose/nerdcommenter'
+
+filetype plugin indent on
+" vundle end
+
+colorscheme railscasts
+set go-=T
+set guifont=Meslo\ LG\ L:h13
+set number
+set numberwidth=4
+set columns=150
+set lines=40
+set autoindent
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set directory=~/.vim/swp
+set backupdir=~/.vim/backup
+set hidden
+set showmode
+set ruler
+
+" load clojure nailgun
+let vimclojure#WantNailgun = 1
+let vimclojure#NailgunClient = "/usr/local/Cellar/nailgun/0.7.1/bin/ng"
+
+" remove trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
+" custom indentation
+autocmd FileType php setlocal shiftwidth=4 softtabstop=4 cindent
+autocmd FileType twig setlocal shiftwidth=4 softtabstop=4
+
+nmap <space> zz
+let maplocalleader = ","
+let mapleader = ","
+
+" controlP bindings
+let g:ctrlp_map = '<d-t>'
+nmap  :CtrlPBuffer<cr>
+
+" comment
+map <D-7> ,c<space>
+
+" cd folder preview
+set wildmenu
+set wildmode=list:longest
+
+" highlight search and when typing
+set hlsearch
+
+" case insensitive search
+set ignorecase
+set smartcase
+
+" stay the fuck out of insert mode
+" someday :)
+" inoremap <Left> <NOP>
+" inoremap <Right> <NOP>
+" inoremap <Up> <NOP>
+" inoremap <Down> <NOP>
+
+" show 2 status lines
+set laststatus=2
+
+" get out of insert mode quickly
+inoremap kj <Esc>
+
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+set wildignore+=public/system/**,tmp/**,*.scssc,*.sassc,*.class,log/**,server/**,vendor/bundle/**
