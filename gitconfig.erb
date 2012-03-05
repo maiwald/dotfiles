@@ -1,0 +1,19 @@
+[user]
+        name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
+	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
+
+[github]
+        user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
+	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
+
+[color]
+	status = auto
+	branch = auto
+	diff = auto
+
+[alias]
+        g = !git --no-pager log --graph --oneline --decorate --abbrev-commit --max-count=30 --pretty=format:\"%C(yellow)%h\t%Cblue%ar\t%Cgreen%an: %Creset%s%Cred%d%Creset\"
+
+[core]
+	editor = vim
+	autocrlf = input
