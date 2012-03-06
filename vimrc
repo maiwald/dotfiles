@@ -57,15 +57,19 @@ nmap  :CtrlPBuffer<cr>
 " comment
 map <D-7> ,c<space>
 
+" display whitespace
+set list
+set listchars=tab:▸\ ,trail:·,nbsp:·
+
+set cursorline
+
 " cd folder preview
 set wildmenu
 set wildmode=list:longest
 
-" highlight search and when typing
-set hlsearch
-
-" case insensitive search
-set ignorecase
+" search
+set hlsearch " highlight search and when typing
+set ignorecase " case insensitive search
 set smartcase
 
 " stay the fuck out of insert mode
@@ -82,4 +86,4 @@ set laststatus=2
 inoremap kj <Esc>
 
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-set wildignore+=public/system/**,tmp/**,*.scssc,*.sassc,*.class,log/**,server/**,vendor/bundle/**
+set wildignore+=*/tmp/*,*.scssc,*.sassc,*.class,*/vendor/bundle/*,*/server/*
