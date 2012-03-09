@@ -12,7 +12,7 @@
   diff = auto
 
 [alias]
-  g = !git --no-pager log --graph --oneline --decorate --abbrev-commit --max-count=30 --pretty=format:\"%C(yellow)%h\t%Cblue%ar\t%Cgreen%an: %Creset%s%Cred%d%Creset\"
+  g = !git --no-pager log --graph --oneline --decorate --abbrev-commit --max-count=25 --pretty=format:\"%C(yellow)%h -%C(red)%d %C(reset)%s %C(blue)(%ar) %C(green)%an %C(reset)\"
 
 [core]
   editor = vim
