@@ -87,4 +87,4 @@ set laststatus=2
 inoremap kj <Esc>
 
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-set wildignore+=*/tmp/*,*.scssc,*.sassc,*.class,*/vendor/bundle/*,*/server/*
+set wildignore+=*/tmp/*,*.scssc,*.sassc,*.class,*/vendor/bundle/*,*/server/*,*/public/system/*
