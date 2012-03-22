@@ -15,6 +15,7 @@ Bundle 'vim-scripts/VimClojure'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'beyondwords/vim-twig'
 
 filetype plugin indent on
 " vundle end
@@ -51,9 +52,10 @@ nmap <space> zz
 let maplocalleader = ","
 let mapleader = ","
 
-" controlP bindings
+" controlP
 let g:ctrlp_map = '<d-t>'
 nmap  :CtrlPBuffer<cr>
+let g:ctrlp_working_path_mode = 0
 
 " comment
 map <D-7> ,c<space>
@@ -87,4 +89,6 @@ set laststatus=2
 inoremap kj <Esc>
 
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-set wildignore+=*/tmp/*,*.scssc,*.sassc,*.class,*/vendor/bundle/*,*/server/*,*/public/system/*
+set wildignore+=*/tmp/*,*.scssc,*.sassc,*.class,*.DS_Store
+set wildignore+=*/vendor/bundle/*,*/server/*,*/public/system/*
+set wildignore+=*theaterjobs*/vendor/*,*/web/bundles/*,*/app/cache/*,*/vendor/bundles*
