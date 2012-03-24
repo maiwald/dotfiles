@@ -66,4 +66,11 @@ function rbenv_prompt ()
   fi
 }
 
-PS1="\n\w\[$GREEN\]\$(rbenv_prompt)\$(git_prompt)\[$NO_COLOR\]$ "
+# only display last three items in pwd
+
+function custom_pwd ()
+{
+  pwd | awk -F\/ '{ print $(NF-2),$(NF-1),$NF }' | sed 's/ /\//g'
+}
+
+PS1="\n\$(custom_pwd)\[$GREEN\]\$(rbenv_prompt)\$(git_prompt)\[$NO_COLOR\]$ "
