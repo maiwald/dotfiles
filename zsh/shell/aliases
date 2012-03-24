@@ -1,0 +1,10 @@
+# ls
+alias la='ls -lAh'
+
+# Git
+alias gst='git status'
+alias gco='git checkout'
+alias gca='git commit -a'
+
+# ruby
+alias b='bundle exec'
