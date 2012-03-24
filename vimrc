@@ -31,11 +31,14 @@ set autoindent
 set expandtab
 set shiftwidth=2
 set softtabstop=2
-set directory=~/.vim/swp
-set backupdir=~/.vim/backup
 set hidden
 set showmode
 set ruler
+
+" no backup or swapping
+set nobackup
+set nowritebackup
+set noswapfile
 
 " load clojure nailgun
 let vimclojure#WantNailgun = 1
