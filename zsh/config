@@ -1,0 +1,8 @@
+export PATH="$HOME/.bin:$PATH"
+
+# include .. and . in cd completion
+zstyle ':completion:*' special-dirs true
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

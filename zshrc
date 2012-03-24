@@ -5,8 +5,9 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="minimal"
+ZSH_THEME="maiwald"
 
+. ~/.zsh/config
 . ~/.zsh/aliases
 
 # Set to this to use case-sensitive completion
@@ -30,6 +31,3 @@ ZSH_THEME="minimal"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
-export PATH=~/.bin:/Users/maiwald/.rbenv/shims:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
