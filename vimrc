@@ -16,11 +16,13 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'beyondwords/vim-twig'
+Bundle 'jpo/vim-railscasts-theme'
 
 filetype plugin indent on
 " vundle end
 
 colorscheme railscasts
+
 set go-=T
 set guifont=Meslo\ LG\ L:h13
 set number
@@ -56,7 +58,7 @@ let maplocalleader = ","
 let mapleader = ","
 
 " controlP
-let g:ctrlp_map = '<d-t>'
+let g:ctrlp_map = '<c-p>'
 nmap  :CtrlPBuffer<cr>
 let g:ctrlp_working_path_mode = 0
 
