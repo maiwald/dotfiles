@@ -1,5 +1,4 @@
-export TERM="screen-256color"
-
+# completion
 autoload -Uz compinit
 compinit
 
