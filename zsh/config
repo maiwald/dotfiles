@@ -1,2 +1,44 @@
+export TERM="screen-256color"
+
+autoload -Uz compinit
+compinit
+
 # include .. and . in cd completion
 zstyle ':completion:*' special-dirs true
+
+autoload -U colors
+colors
+
+autoload -Uz vcs_info
+
+zstyle ':vcs_info:*' stagedstr '%F{28}●'
+zstyle ':vcs_info:*' unstagedstr '%F{11}●'
+
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
+zstyle ':vcs_info:*' enable git
+
+precmd () {
+    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
+        zstyle ':vcs_info:*' formats ' [%F{green}%b%c%u%F{clear}]'
+    } else {
+        zstyle ':vcs_info:*' formats ' [%F{green}%b%c%u%F{red}●%F{clear}]'
+    }
+
+    vcs_info
+}
+
+setopt prompt_subst
+PROMPT='%3~${vcs_info_msg_0_}$ %b'
+
+# ctrl arrow keys to move between words
+bindkey ';5C' emacs-forward-word
+bindkey ';5D' emacs-backward-word
+
+# do not share histories
+unsetopt SHARE_HISTORY
+
+# update word boundaries
+WORDCHARS=${WOARCHARS:s/-=_//}
+
+export EDITOR=vim
