@@ -17,6 +17,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'beyondwords/vim-twig'
 Bundle 'jpo/vim-railscasts-theme'
+Bundle 'scrooloose/nerdtree'
 
 filetype plugin indent on
 " vundle end
