@@ -32,10 +32,11 @@ PROMPT='%3~${vcs_info_msg_0_}$ %b'
 bindkey ';5C' emacs-forward-word
 bindkey ';5D' emacs-backward-word
 
-# do not share histories
-unsetopt SHARE_HISTORY
-
 # update word boundaries
 WORDCHARS=${WOARCHARS:s/-=_//}
+
+# history
+setopt HIST_IGNORE_DUPS
+unsetopt SHARE_HISTORY
 
 export EDITOR=vim
