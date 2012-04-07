@@ -10,6 +10,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-markdown'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/VimClojure'
 Bundle 'kchmck/vim-coffee-script'
