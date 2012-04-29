@@ -52,6 +52,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 " custom indentation
 autocmd FileType php setlocal shiftwidth=4 softtabstop=4 cindent
 autocmd FileType twig setlocal shiftwidth=4 softtabstop=4
+autocmd FileType java setlocal shiftwidth=4 softtabstop=4
 
 nmap <space> zz
 let maplocalleader = ","
