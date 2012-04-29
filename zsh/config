@@ -26,7 +26,7 @@ precmd () {
 }
 
 setopt prompt_subst
-PROMPT='%3~${vcs_info_msg_0_}$ %b'
+PROMPT='%F{yellow}%3~%F{clear}${vcs_info_msg_0_}$ %b'
 
 # ctrl arrow keys to move between words
 bindkey ';5C' emacs-forward-word
