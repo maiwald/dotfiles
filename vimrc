@@ -17,25 +17,31 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'beyondwords/vim-twig'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle 'scrooloose/nerdtree'
+Bundle 'wgibbs/vim-irblack'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 " vundle end
 
-colorscheme railscasts
+set t_Co=256
+set background=light
+colorscheme solarized
+syntax on
 
-set go-=T
-set guifont=Meslo\ LG\ L:h13
 set number
 set numberwidth=4
-set columns=150
-set lines=40
+set ruler
+set autoread
+
+" indentation
 set autoindent
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+
+" allow hiding modified buffers
 set hidden
-set showmode
-set ruler
+
 
 " no backup or swapping
 set nobackup
@@ -82,11 +88,10 @@ set ignorecase " case insensitive search
 set smartcase
 
 " stay the fuck out of insert mode
-" someday :)
-" inoremap <Left> <NOP>
-" inoremap <Right> <NOP>
-" inoremap <Up> <NOP>
-" inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
 
 " show 2 status lines
 set laststatus=2
