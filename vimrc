@@ -15,16 +15,13 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'beyondwords/vim-twig'
-Bundle 'jpo/vim-railscasts-theme'
-Bundle 'scrooloose/nerdtree'
 Bundle 'wgibbs/vim-irblack'
 Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 " vundle end
 
-set t_Co=256
-set background=light
+set background=dark
 colorscheme solarized
 syntax on
 
@@ -41,7 +38,6 @@ set softtabstop=2
 
 " allow hiding modified buffers
 set hidden
-
 
 " no backup or swapping
 set nobackup
