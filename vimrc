@@ -21,7 +21,7 @@ Bundle 'altercation/vim-colors-solarized'
 filetype plugin indent on
 " vundle end
 
-set background=dark
+set background=light
 colorscheme solarized
 syntax on
 
