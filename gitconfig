@@ -12,7 +12,7 @@
   diff = auto
 
 [alias]
-  g = !git --no-pager log --graph --oneline --decorate --abbrev-commit --max-count=25 --pretty=format:\"%C(yellow)%h -%C(red)%d %C(reset)%s %C(blue)(%ar) %C(green)%an %C(reset)\"
+  g = "!source ~/.githelpers && pretty_git_log"
 
 [core]
   editor = vim
