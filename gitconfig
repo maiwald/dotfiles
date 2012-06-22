@@ -21,4 +21,4 @@
   excludesfile = ~/.gitignore
 
 [push]
-  default = current
+  default = upstream
