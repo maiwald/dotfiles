@@ -59,33 +59,3 @@ def create_symlink(pointing_file, pointed_at_file)
   puts "linking #{pointing_file} -> #{pointed_at_file}"
   system %Q{ln -s "#{pointed_at_file}" "#{pointing_file}"}
 end
-
-namespace :'vim' do
-  namespace :'command-t' do
-    desc 'build the Command-T Ruby extensions'
-    task :build do
-      Dir.chdir('vim/bundle/command-t/ruby/command-t') do
-        puts `ruby extconf.rb`
-        puts `make`
-      end
-    end
-  end
-end
-
-namespace :tmux do
-  desc 'build the OSX pasteboard wrapper'
-  task :build_pasteboard_wrapper do
-    Dir.chdir('utils/tmux-MacOSX-pasteboard') do
-      puts `make reattach-to-user-namespace`
-      puts `cp reattach-to-user-namespace ../../bin`
-    end
-  end
-  desc 'clean the OSX pasteboard wrapper'
-  task :clean_pasteboard_wrapper do
-    Dir.chdir('utils/tmux-MacOSX-pasteboard') do
-      puts `rm -rf reattach-to-user-namespace reattach-to-user-namespace.o msg.o`
-    end
-    puts `rm -rf bin/reattach-to-user-namespace`
-  end
-end
-
