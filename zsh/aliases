@@ -5,7 +5,7 @@ alias la='ls -lAh'
 # Git
 alias gd='git diff'
 alias gds='git diff --staged'
-alias gg='git gg'
+alias gg='git g -n 20'
 alias gst='git status'
 alias gco='git checkout'
 alias gca='git commit -a'

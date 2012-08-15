@@ -12,7 +12,6 @@
 
 [alias]
   g = "!source ~/.githelpers && pretty_git_log"
-  gg = "!git g -n 20"
 
 [core]
   editor = vim
