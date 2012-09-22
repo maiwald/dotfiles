@@ -94,6 +94,8 @@ set laststatus=2
 
 " get out of insert mode quickly
 inoremap kj <Esc>
+inoremap Kj <Esc>
+inoremap KJ <Esc>
 
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 set wildignore+=*/tmp/*,*.scssc,*.sassc,*.class,*.DS_Store
