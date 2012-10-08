@@ -9,6 +9,7 @@
   status = auto
   branch = auto
   diff = auto
+  interactive = auto
 
 [alias]
   g = "!source ~/.githelpers && pretty_git_log"
@@ -20,5 +21,6 @@
 
 [push]
   default = upstream
+
 [branch]
   autosetuprebase = always
