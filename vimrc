@@ -97,6 +97,10 @@ inoremap kj <Esc>
 inoremap Kj <Esc>
 inoremap KJ <Esc>
 
+" insert newline above/below
+nnoremap <C-J> mao<Esc>`a
+nnoremap <C-K> maO<Esc>`a
+
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 set wildignore+=*/tmp/*,*.scssc,*.sassc,*.class,*.DS_Store
 set wildignore+=*/vendor/bundle/*,*/server/*,*/public/system/*,*/node_modules/*,*/.rsync_cache/*
