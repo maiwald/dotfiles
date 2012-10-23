@@ -17,6 +17,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'beyondwords/vim-twig'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/syntastic'
+Bundle 'mileszs/ack.vim'
 
 filetype plugin indent on
 " vundle end
