@@ -115,6 +115,8 @@ inoremap KJ <Esc>
 nnoremap <C-J> mao<Esc>`a
 nnoremap <C-K> maO<Esc>`a
 
+map <leader>y :wa<cr>:! ./script/yeti spec-js/dev.html<cr>
+
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 set wildignore+=*/tmp/*,*.scssc,*.sassc,*.class,*.DS_Store
 set wildignore+=*/vendor/bundle/*,*/server/*,*/public/system/*,*/node_modules/*,*/.rsync_cache/*
