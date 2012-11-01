@@ -18,6 +18,7 @@ Bundle 'beyondwords/vim-twig'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim'
+Bundle 'scrooloose/nerdcommenter'
 
 filetype plugin indent on
 " vundle end
