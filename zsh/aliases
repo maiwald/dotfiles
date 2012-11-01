@@ -3,6 +3,7 @@ alias ls='ls -G'
 alias la='ls -lAh'
 
 # Git
+alias ga='git add -A'
 alias gd='git diff'
 alias gds='git diff --staged'
 alias gg='git g -n 20'
@@ -10,6 +11,8 @@ alias gst='git status'
 alias gco='git checkout'
 alias gca='git commit -a'
 alias gci='git commit'
+alias gpp='git pull && git push'
 
 # ruby
 alias b='bundle exec'
+alias be='b'
