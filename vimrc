@@ -38,6 +38,8 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
+set winwidth=90
+
 " allow hiding modified buffers
 set hidden
 
