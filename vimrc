@@ -12,13 +12,13 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
 Bundle 'kien/ctrlp.vim'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'beyondwords/vim-twig'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim'
-Bundle 'scrooloose/nerdcommenter'
 
 filetype plugin indent on
 " vundle end
