@@ -32,6 +32,8 @@ set number
 set numberwidth=4
 set ruler
 set autoread
+set winwidth=90
+set splitright
 
 " indentation
 set autoindent
@@ -39,7 +41,6 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
-set winwidth=90
 
 " allow hiding modified buffers
 set hidden
