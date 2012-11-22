@@ -41,6 +41,8 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
+" map :W to :w
+cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 
 " allow hiding modified buffers
 set hidden
