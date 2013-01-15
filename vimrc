@@ -49,10 +49,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" load clojure nailgun
-let vimclojure#WantNailgun = 1
-let vimclojure#NailgunClient = "/usr/local/Cellar/nailgun/0.7.1/bin/ng"
-
 " remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -61,7 +57,6 @@ autocmd FileType php setlocal shiftwidth=4 softtabstop=4 cindent
 autocmd FileType twig setlocal shiftwidth=4 softtabstop=4
 autocmd FileType java setlocal shiftwidth=4 softtabstop=4
 
-nmap <space> zz
 let maplocalleader = ","
 let mapleader = ","
 
