@@ -101,6 +101,8 @@ function! MapCR()
 endfunction
 call MapCR()
 
+nnoremap <space> zz
+
 " map :W to :w
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 
