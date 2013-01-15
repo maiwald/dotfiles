@@ -41,9 +41,6 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
-" map :W to :w
-cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
-
 " allow hiding modified buffers
 set hidden
 
@@ -102,6 +99,9 @@ vnoremap <silent> # :<C-U>
   \gvy?<C-R><C-R>=substitute(
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
+
+" map :W to :w
+cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 
 " stay the fuck out of insert mode
 inoremap <Left> <NOP>
