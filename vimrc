@@ -34,6 +34,7 @@ set ruler
 set autoread
 set winwidth=90
 set splitright
+set splitbelow
 
 " indentation
 set autoindent
