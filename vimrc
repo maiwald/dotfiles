@@ -113,12 +113,6 @@ inoremap <Right> <NOP>
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 
-" Move around splits with <c-hjkl>
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-
 " show 2 status lines
 set laststatus=2
 
@@ -130,8 +124,6 @@ inoremap KJ <Esc>
 " insert newline above/below
 nnoremap <C-J> mao<Esc>`a
 nnoremap <C-K> maO<Esc>`a
-
-map <leader>y :wa<cr>:! ./script/yeti spec-js/dev.html<cr>
 
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 set wildignore+=*/tmp/*,*.scssc,*.sassc,*.class,*.DS_Store
