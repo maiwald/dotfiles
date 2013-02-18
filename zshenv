@@ -1,5 +1,3 @@
-export PATH="$HOME/.bin:$PATH"
-
 # add npm bin to path
 export PATH="/usr/local/share/npm/bin:$PATH"
 
