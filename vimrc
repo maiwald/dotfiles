@@ -42,6 +42,9 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
+" allow backspace to delete indentation
+set backspace=indent
+
 " allow hiding modified buffers
 set hidden
 
