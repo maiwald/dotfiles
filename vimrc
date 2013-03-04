@@ -43,7 +43,7 @@ set shiftwidth=2
 set softtabstop=2
 
 " allow backspace to delete indentation
-set backspace=indent
+set backspace=indent,eol,start
 
 " allow hiding modified buffers
 set hidden
