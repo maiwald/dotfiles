@@ -20,6 +20,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'beyondwords/vim-twig'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'mileszs/ack.vim'
+Bundle 'adimit/prolog.vim'
 
 filetype plugin indent on
 " vundle end
