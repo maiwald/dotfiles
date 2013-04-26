@@ -9,7 +9,7 @@ alias gds='git diff --staged'
 alias gg='git g -n 20'
 alias gst='git status'
 alias gco='git checkout'
-alias gci='git commit'
+alias gci='git commit -v'
 alias gp='git pull --rebase'
 alias gpp='git pull --rebase && git push'
 
