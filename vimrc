@@ -21,6 +21,7 @@ Bundle 'beyondwords/vim-twig'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'mileszs/ack.vim'
 Bundle 'adimit/prolog.vim'
+Bundle 'derekwyatt/vim-scala'
 
 filetype plugin indent on
 " vundle end
