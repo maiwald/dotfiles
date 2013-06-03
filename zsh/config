@@ -43,3 +43,8 @@ setopt hist_ignore_dups
 setopt inc_append_history
 
 export EDITOR=vim
+
+# Show contents of directory after cd-ing into it
+chpwd() {
+  ls -lAh
+}
