@@ -46,5 +46,5 @@ export EDITOR=vim
 
 # Show contents of directory after cd-ing into it
 chpwd() {
-  ls -lAh
+  ls -lAhG
 }
