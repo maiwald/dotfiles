@@ -1,26 +1,29 @@
 [user]
-  name = Luciano Maiwald
-  email = luciano.maiwald@gmail.com
+	name = Luciano Maiwald
+	email = luciano.maiwald@gmail.com
 
 [github]
-  user = maiwald
+	user = maiwald
 
 [color]
-  status = auto
-  branch = auto
-  diff = auto
-  interactive = auto
+	status = auto
+	branch = auto
+	diff = auto
+	interactive = auto
 
 [alias]
-  g = "!source ~/.githelpers && pretty_git_log"
+	g = "!source ~/.githelpers && pretty_git_log"
 
 [core]
-  editor = vim
-  autocrlf = input
-  excludesfile = ~/.gitignore
+	editor = vim
+	autocrlf = input
+	excludesfile = ~/.gitignore
 
 [push]
-  default = upstream
+	default = upstream
 
 [branch]
-  autosetuprebase = always
+	autosetuprebase = always
+
+[diff]
+	algorithm = patience
