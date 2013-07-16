@@ -129,7 +129,8 @@ inoremap KJ <Esc>
 nnoremap <C-J> mao<Esc>`a
 nnoremap <C-K> maO<Esc>`a
 
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
 set wildignore+=*/tmp/*,*.scssc,*.sassc,*.class,*.DS_Store
 set wildignore+=*/vendor/bundle/*,*/server/*,*/public/system/*,*/node_modules/*,*/.rsync_cache/*
-set wildignore+=*theaterjobs*/vendor/*,*/web/bundles/*,*/app/cache/*,*/vendor/bundles*
+set wildignore+=*/public/javascripts/compiled/*,*/app-js/vendor/*
