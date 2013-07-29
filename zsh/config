@@ -31,9 +31,11 @@ PROMPT='%F{yellow}%3~%F{clear}${vcs_info_msg_0_}$ %b'
 # fix emacs movement in tmux
 bindkey -e
 
-# ctrl arrow keys to move between words
-bindkey ';5C' emacs-forward-word
+# ctrl/alt arrow keys to move between words
 bindkey ';5D' emacs-backward-word
+bindkey ';5C' emacs-forward-word
+bindkey ';3D' emacs-backward-word
+bindkey ';3C' emacs-forward-word
 
 # update word boundaries
 WORDCHARS=${WOARCHARS:s/-=_//}
