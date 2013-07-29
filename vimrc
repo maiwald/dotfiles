@@ -22,6 +22,7 @@ Bundle 'beyondwords/vim-twig'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'mileszs/ack.vim'
 Bundle 'adimit/prolog.vim'
+Bundle 'godlygeek/tabular'
 
 filetype plugin indent on
 " vundle end
@@ -129,6 +130,13 @@ inoremap KJ <Esc>
 " insert newline above/below
 nnoremap <C-J> mao<Esc>`a
 nnoremap <C-K> maO<Esc>`a
+
+function! TabularizeRuby()
+  call feedkeys(":Tab /,\<CR>")
+  call feedkeys(":Tab /[\<CR>")
+  call feedkeys(":Tab /]\<CR>")
+endfunction
+map <leader>T :call TabularizeRuby()<CR>
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
