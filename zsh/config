@@ -28,6 +28,9 @@ precmd () {
 setopt prompt_subst
 PROMPT='%F{yellow}%3~%F{clear}${vcs_info_msg_0_}$ %b'
 
+# fix emacs movement in tmux
+bindkey -e
+
 # ctrl arrow keys to move between words
 bindkey ';5C' emacs-forward-word
 bindkey ';5D' emacs-backward-word
