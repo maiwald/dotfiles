@@ -16,6 +16,7 @@ alias gpp='git pull --rebase && git push'
 # ruby
 alias b='bundle exec'
 alias be='b'
+alias RAT='RAILS_ENV=test RACK_ENV=test'
 
 # brew
 alias bru='brew update && brew outdated'
