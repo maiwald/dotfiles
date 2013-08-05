@@ -19,3 +19,6 @@ alias be='b'
 
 # brew
 alias bru='brew update && brew outdated'
+
+# tmux
+alias tmuy='tmux'
