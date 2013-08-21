@@ -23,6 +23,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'mileszs/ack.vim'
 Bundle 'adimit/prolog.vim'
 Bundle 'godlygeek/tabular'
+Bundle 'vim-ruby/vim-ruby'
 
 filetype plugin indent on
 " vundle end
