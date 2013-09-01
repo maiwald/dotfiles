@@ -23,3 +23,22 @@ alias bru='brew update && brew outdated'
 
 # tmux
 alias tmuy='tmux'
+
+function tnew()
+{
+  if [[ $# != 1 ]]; then
+    echo "usage: tnew <session-name>"
+    echo "Create a new tmux session with shell and vim windows or attach a session by the same name"
+    return 1
+  fi
+
+  tmux attach-session -t $1 > /dev/null 2>&1 || {
+    tmux new-session -d -s $1 -n shell
+
+    tmux new-window -t $1 -n vim
+    tmux send-keys -t "$1":vim vim C-m
+
+    tmux select-window -t "$1":shell
+    tmux attach -t $1
+  }
+}
