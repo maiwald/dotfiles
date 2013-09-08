@@ -19,7 +19,7 @@ alias be='b'
 alias RAT='RAILS_ENV=test RACK_ENV=test'
 
 # brew
-alias bru='brew update && brew outdated'
+alias bru='brew update && brew outdated && brew upgrade && brew cleanup'
 
 # tmux
 alias tmuy='tmux'
