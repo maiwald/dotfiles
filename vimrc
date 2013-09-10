@@ -119,6 +119,10 @@ inoremap <Right> <NOP>
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 
+" move up and down displayed lines
+noremap j gj
+noremap k gk
+
 " show 2 status lines
 set laststatus=2
 
