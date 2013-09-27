@@ -24,6 +24,7 @@ Bundle 'adimit/prolog.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'thoughtbot/vim-rspec'
+Bundle 'jimenezrick/vimerl'
 
 filetype plugin indent on
 " vundle end
