@@ -1,0 +1,57 @@
+# vim: ft=sh
+
+function mk() {
+  if [ $# -eq 1 ]; then
+    mkdir $1 && cd $1
+  fi
+}
+
+function ghc() {
+  if [ $# -eq 1 ]; then
+    git clone git@github.com:"$1".git
+  fi
+}
+
+# create a default tmux session
+# or attach a session be the same name
+function tnew()
+{
+  if [[ $# != 1 ]]; then
+    echo "usage: tnew <session-name>"
+    echo "Create a new tmux session with shell and vim windows or attach a session by the same name"
+    return 1
+  fi
+
+  tmux has-session -t $1 2>/dev/null
+  if [[ "$?" -ne 0 ]]; then
+    tmux new-session -d -s $1 -n shell
+    tmux new-window -t $1 -n vim
+    tmux send-keys -t "$1":vim vim C-m
+    tmux select-window -t "$1":shell
+  fi
+
+  tmux attach -t $1
+}
+
+# Add the following to your ~/.bashrc or ~/.zshrc
+hitch() {
+  command hitch "$@"
+  if [[ -s "$HOME/.hitch_export_authors" ]] ; then source "$HOME/.hitch_export_authors" ; fi
+}
+alias unhitch='hitch -u'
+
+voice() {
+  if [ $# -lt 1 ]; then
+    echo "USAGE: $0 [text] [lang]"
+    return
+  fi
+  value="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$1")"
+  lang=${2:-"de"}
+  url="http://translate.google.de/translate_tts?ie=UTF-8&q=$value&tl=$lang&total=1&idx=0&textlen=19&prev=input"
+  file="/tmp/voice.mp3"
+  wget -q -U "Mozilla/5.0" -O $file $url && afplay $file && rm $file
+}
+
+stinkt() {
+  $(voice "$1 stinkt")
+}

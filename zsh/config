@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 # completion
 autoload -Uz compinit
 compinit
@@ -50,13 +52,7 @@ setopt inc_append_history
 export EDITOR=vim
 
 # Show contents of directory after cd-ing into it
-chpwd() {
+function chpwd() {
   ls -lAhG
 }
 
-function mk() {
-  if [ $# -eq 1 ]
-  then
-    mkdir $1 && cd $1
-  fi
-}

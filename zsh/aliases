@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 # ls
 alias ls='ls -G'
 alias la='ls -lAh'
@@ -23,24 +25,3 @@ alias bru='brew update && brew outdated && brew upgrade && brew cleanup'
 
 # tmux
 alias tmuy='tmux'
-
-function tnew()
-{
-  if [[ $# != 1 ]]
-  then
-    echo "usage: tnew <session-name>"
-    echo "Create a new tmux session with shell and vim windows or attach a session by the same name"
-    return 1
-  fi
-
-  tmux has-session -t $1 2>/dev/null
-  if [[ "$?" -ne 0 ]]
-  then
-    tmux new-session -d -s $1 -n shell
-    tmux new-window -t $1 -n vim
-    tmux send-keys -t "$1":vim vim C-m
-    tmux select-window -t "$1":shell
-  fi
-
-  tmux attach -t $1
-}
