@@ -112,6 +112,9 @@ call MapCR()
 
 nnoremap <space> zz
 
+" map NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
 " Rspec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
