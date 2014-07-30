@@ -4,6 +4,9 @@
 autoload -Uz compinit
 compinit
 
+# set "open files" limit
+ulimit -n 8192
+
 # include .. and . in cd completion
 zstyle ':completion:*' special-dirs true
 
