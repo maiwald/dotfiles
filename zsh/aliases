@@ -6,14 +6,15 @@ alias la='ls -lAh'
 
 # git
 alias ga='git add -A'
+alias gb='git branch'
+alias gci='git commit -v'
+alias gco='git checkout'
 alias gd='git diff'
 alias gds='git diff --staged'
 alias gg='git g -n 20 | tail -n 100'
-alias gst='git status'
-alias gco='git checkout'
-alias gci='git commit -v'
 alias gp='git pull --rebase'
 alias gpp='git pull --rebase && git push'
+alias gst='git status'
 
 # ruby
 alias b='bundle exec'
