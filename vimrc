@@ -88,6 +88,9 @@ set cursorline
 set wildmenu
 set wildmode=list:longest
 
+" disable Ex mode
+nnoremap Q <NOP>
+
 " search
 set hlsearch " highlight search and when typing
 set ignorecase " case insensitive search
