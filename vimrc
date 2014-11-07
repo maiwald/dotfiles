@@ -11,12 +11,12 @@ Bundle 'gmarik/vundle'
 
 Bundle 'adimit/prolog.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'bling/vim-airline'
 Bundle 'godlygeek/tabular'
 Bundle 'henrik/vim-yaml-flattener'
 Bundle 'jimenezrick/vimerl'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
-Bundle 'lokaltog/vim-powerline'
 Bundle 'mileszs/ack.vim'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'scrooloose/nerdcommenter'
@@ -36,6 +36,9 @@ filetype plugin indent on
 set background=light
 colorscheme solarized
 syntax on
+
+" airline
+let g:airline_powerline_fonts = 1
 
 set number
 set numberwidth=4
