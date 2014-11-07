@@ -1,37 +1,29 @@
 set nocompatible
 
-" vundle
+call plug#begin('~/.vim/plugged')
 
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+Plug 'adimit/prolog.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'bling/vim-airline'
+Plug 'godlygeek/tabular'
+Plug 'henrik/vim-yaml-flattener'
+Plug 'jimenezrick/vimerl'
+Plug 'kchmck/vim-coffee-script'
+Plug 'kien/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-surround'
+Plug 'vim-ruby/vim-ruby'
+Plug 'vim-scripts/Rename2'
 
-" let Vundle manage Vundle
-Bundle 'gmarik/vundle'
-
-Bundle 'adimit/prolog.vim'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'bling/vim-airline'
-Bundle 'godlygeek/tabular'
-Bundle 'henrik/vim-yaml-flattener'
-Bundle 'jimenezrick/vimerl'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-surround'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-scripts/Rename2'
-
-filetype plugin indent on
-" vundle end
+call plug#end()
 
 set background=light
 colorscheme solarized
