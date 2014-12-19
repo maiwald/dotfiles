@@ -6,10 +6,10 @@ Plug 'adimit/prolog.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'godlygeek/tabular'
-Plug 'henrik/vim-yaml-flattener'
 Plug 'jimenezrick/vimerl'
 Plug 'kchmck/vim-coffee-script'
 Plug 'kien/ctrlp.vim'
+Plug 'lmeijvogel/vim-yaml-helper'
 Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'scrooloose/nerdcommenter'
@@ -31,6 +31,7 @@ syntax on
 
 " airline
 let g:airline_powerline_fonts = 1
+let g:airline_section_b = ''
 
 set number
 set numberwidth=4
@@ -56,6 +57,12 @@ set hidden
 set nobackup
 set nowritebackup
 set noswapfile
+
+" persistent undo
+set undofile
+set undodir=$HOME/.vim/undo
+set undolevels=1000
+set undoreload=10000
 
 " remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
