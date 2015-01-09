@@ -77,7 +77,7 @@ let mapleader = ","
 
 " controlP
 let g:ctrlp_map = '<c-p>'
-nmap  :CtrlPBuffer<cr>
+nmap <leader>b :CtrlPBuffer<cr>
 let g:ctrlp_working_path_mode = 0
 
 " comment
