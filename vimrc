@@ -2,6 +2,7 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'adimit/prolog.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
@@ -12,13 +13,15 @@ Plug 'kien/ctrlp.vim'
 Plug 'lmeijvogel/vim-yaml-helper'
 Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/Rename2'
@@ -155,6 +158,10 @@ inoremap KJ <Esc>
 " insert newline above/below
 nnoremap <C-J> mao<Esc>`a
 nnoremap <C-K> maO<Esc>`a
+
+" more comfortable moving through search results
+nnoremap <leader>n :cnext<cr>
+nnoremap <leader>p :cprevious<cr>
 
 function! TabularizeRuby()
   call feedkeys(":Tab /,\<CR>")
