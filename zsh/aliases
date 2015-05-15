@@ -24,7 +24,7 @@ alias RAT='RAILS_ENV=test RACK_ENV=test'
 
 # brew
 alias brupdate='brew update && brew outdated'
-alias brupgrade='brew upgrade && brew cleanup'
+alias brupgrade='brew upgrade --all && brew cleanup'
 
 # tmux
 alias tmuy='tmux'
