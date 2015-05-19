@@ -12,6 +12,14 @@ function ghc() {
   fi
 }
 
+function gru() {
+  read "reply?Reset to upstream, are you sure? "
+  if [[ "$reply" =~ ^[Yy]$ ]]
+  then
+    git fetch && git reset --hard @{u}
+  fi
+}
+
 # create a default tmux session
 # or attach a session be the same name
 function tnew()
