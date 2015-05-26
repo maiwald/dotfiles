@@ -6,6 +6,7 @@ alias la='ls -lAh'
 
 # git
 alias ga='git add -A'
+alias gap='git add -A -p'
 alias gb='git branch'
 alias gci='git commit -v'
 alias gco='git checkout'
