@@ -15,6 +15,7 @@ alias gds='git diff --staged'
 alias gg='git g -n 20 | tail -n 100'
 alias gp='git pull --rebase'
 alias gpp='git pull --rebase && git push'
+alias gpom='git pull --rebase origin master'
 alias gst='git status'
 alias gri='git rebase -i'
 
