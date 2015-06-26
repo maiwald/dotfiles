@@ -8,8 +8,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'godlygeek/tabular'
 Plug 'jimenezrick/vimerl'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'kchmck/vim-coffee-script'
-Plug 'kien/ctrlp.vim'
 Plug 'lmeijvogel/vim-yaml-helper'
 Plug 'mileszs/ack.vim'
 Plug 'mtscout6/vim-cjsx'
@@ -81,10 +81,25 @@ autocmd FileType java setlocal shiftwidth=4 softtabstop=4
 let maplocalleader = ","
 let mapleader = ","
 
-" controlP
-let g:ctrlp_map = '<c-p>'
-nmap <leader>b :CtrlPBuffer<cr>
-let g:ctrlp_working_path_mode = 0
+" fzf
+nnoremap <c-p> :FZF<CR>
+function! s:buflist()
+  redir => ls
+  silent ls
+  redir END
+  return split(ls, '\n')
+endfunction
+
+function! s:bufopen(e)
+  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
+endfunction
+
+nnoremap <silent> <Leader>b :call fzf#run({
+\   'source':  reverse(<sid>buflist()),
+\   'sink':    function('<sid>bufopen'),
+\   'options': '+m',
+\   'down':    len(<sid>buflist()) + 2
+\ })<CR>
 
 " comment
 map <D-7> ,c<space>
