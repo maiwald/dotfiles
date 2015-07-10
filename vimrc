@@ -83,23 +83,28 @@ let mapleader = ","
 
 " fzf
 nnoremap <c-p> :FZF<CR>
-function! s:buflist()
+function! s:buffer_list()
   redir => ls
   silent ls
   redir END
   return split(ls, '\n')
 endfunction
 
-function! s:bufopen(e)
-  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
+function! s:buffer_handler(lines) abort
+  if empty(a:lines)
+    return
+  endif
+  let cmd = get({ 'ctrl-t': 'tabedit | b',
+                \ 'ctrl-x': 'split | b',
+                \ 'ctrl-v': 'vsplit | b' }, remove(a:lines, 0), 'b')
+  execute cmd.matchstr(a:lines[0], '^[ 0-9]*')
 endfunction
 
-nnoremap <silent> <Leader>b :call fzf#run({
-\   'source':  reverse(<sid>buflist()),
-\   'sink':    function('<sid>bufopen'),
-\   'options': '+m',
-\   'down':    len(<sid>buflist()) + 2
-\ })<CR>
+nnoremap <silent> <leader>b :call fzf#run({
+  \ 'source':  <sid>buffer_list(),
+  \ 'options': '--expect=ctrl-t,ctrl-x,ctrl-v',
+  \ 'down':    len(<sid>buffer_list()) + 2,
+  \ 'sink*':   function('<sid>buffer_handler')})<cr>
 
 " comment
 map <D-7> ,c<space>
