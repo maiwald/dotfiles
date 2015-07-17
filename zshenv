@@ -14,6 +14,4 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # FZF with Git optimization
 # https://github.com/junegunn/fzf
-export FZF_DEFAULT_COMMAND='
-  (git ls-tree -r --name-only HEAD ||
-   find * -name ".*" -prune -o -type f -print -o -type l -print) 2> /dev/null'
+export FZF_DEFAULT_COMMAND='ag -l -g ""'
