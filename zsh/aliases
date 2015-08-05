@@ -5,6 +5,7 @@ alias ls='ls -G'
 alias la='ls -lAh'
 
 # git
+alias git='hub'
 alias ga='git add -A'
 alias gap='git add -A -p'
 alias gb='git branch'
