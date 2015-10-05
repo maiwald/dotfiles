@@ -7,6 +7,7 @@ Plug 'adimit/prolog.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'godlygeek/tabular'
+Plug 'janko-m/vim-test'
 Plug 'jimenezrick/vimerl'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'kchmck/vim-coffee-script'
@@ -18,13 +19,14 @@ Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
-Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-salve'
 Plug 'tpope/vim-surround'
@@ -102,6 +104,22 @@ function! s:buffer_handler(lines) abort
   execute cmd.matchstr(a:lines[0], '^[ 0-9]*')
 endfunction
 
+" rails.vim alternate files
+let g:rails_projections = {
+\   "app-js/*.coffee": {
+\     "alternate": "spec-js/%s_spec.coffee"
+\   },
+\   "spec-js/*_spec.coffee": {
+\     "alternate": "app-js/%s.coffee"
+\   },
+\   "import/*.rb": {
+\     "alternate": "spec_import/%s_spec.rb"
+\   },
+\   "spec_import/*_spec.rb": {
+\     "alternate": "import/%s.rb"
+\   }
+\ }
+
 nnoremap <silent> <leader>b :call fzf#run({
   \ 'source':  <sid>buffer_list(),
   \ 'options': '--expect=ctrl-t,ctrl-x,ctrl-v',
@@ -152,12 +170,22 @@ nnoremap <space> zz
 " map NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
-" Rspec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-let g:rspec_command = "!bundle exec rspec {spec}"
+" test.vim mappings
+nmap <silent> <leader>s :TestNearest<CR>
+nmap <silent> <leader>t :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+let g:test#strategy = 'dispatch'
+
+autocmd FileType ruby
+  \ if expand('%') =~# '_test\.rb$' |
+  \   compiler rubyunit | setl makeprg=testrb\ \"%:p\" |
+  \ elseif expand('%') =~# '_spec\.rb$' |
+  \   compiler rspec | setl makeprg=rspec\ \"%:p\" |
+  \ else |
+  \   compiler ruby | setl makeprg=ruby\ -wc\ \"%:p\" |
+  \ endif
 
 " map :W to :w
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
