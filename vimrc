@@ -159,13 +159,8 @@ vnoremap <silent> # :<C-U>
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
-" Clear the search buffer when hitting return
-function! MapCR()
-  nnoremap <cr> :nohlsearch<cr>
-endfunction
-call MapCR()
-
-nnoremap <space> zz
+" clear search on ESC ESC
+map <ESC><ESC> :nohlsearch<CR>
 
 " map NERDTree
 map <C-n> :NERDTreeToggle<CR>
