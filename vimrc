@@ -224,3 +224,6 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 set wildignore+=*/tmp/*,*.scssc,*.sassc,*.class,*.DS_Store
 set wildignore+=*/vendor/bundle/*,*/server/*,*/public/system/*,*/node_modules/*,*/.rsync_cache/*
 set wildignore+=*/public/javascripts/compiled/*,*/app-js/vendor/*
+
+" save before calling make (tests)
+set autowrite
