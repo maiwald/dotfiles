@@ -10,7 +10,6 @@ export PATH="/usr/local/bin:$PATH"
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # FZF with Git optimization
 # https://github.com/junegunn/fzf
