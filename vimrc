@@ -134,7 +134,9 @@ map <D-7> ,c<space>
 set list
 set listchars=tab:▸\ ,trail:·,nbsp:·
 
+" cursor
 set cursorline
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 " cd folder preview
 set wildmenu
