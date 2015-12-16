@@ -10,7 +10,3 @@ export PATH="/usr/local/bin:$PATH"
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
-
-# FZF with Git optimization
-# https://github.com/junegunn/fzf
-export FZF_DEFAULT_COMMAND='ag -l -g ""'
