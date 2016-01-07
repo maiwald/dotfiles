@@ -20,7 +20,7 @@
 	excludesfile = ~/.gitignore
 
 [push]
-	default = upstream
+	default = simple
 
 [branch]
 	autosetuprebase = always
