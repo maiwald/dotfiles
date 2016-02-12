@@ -190,10 +190,10 @@ autocmd FileType ruby
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 
 " stay the fuck out of insert mode
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
+" inoremap <Left> <NOP>
+" inoremap <Right> <NOP>
+" inoremap <Up> <NOP>
+" inoremap <Down> <NOP>
 
 " move up and down displayed lines
 noremap j gj

@@ -1,5 +1,9 @@
 # vim: ft=sh
 
+# neovim
+alias vim='nvim'
+alias vi='nvim'
+
 # ls
 alias ls='ls -G'
 alias la='ls -lAh'
