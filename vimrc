@@ -3,6 +3,7 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'AndrewRadev/switch.vim'
 Plug 'adimit/prolog.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
@@ -213,6 +214,9 @@ nnoremap <C-K> maO<Esc>`a
 " more comfortable moving through search results
 nnoremap <leader>n :cnext<cr>
 nnoremap <leader>p :cprevious<cr>
+
+" switch mapping
+let g:switch_mapping = "-"
 
 function! TabularizeRuby()
   call feedkeys(":Tab /,\<CR>")
