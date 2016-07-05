@@ -78,7 +78,7 @@ set undolevels=1000
 set undoreload=10000
 
 " remove trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * if (index(['markdown', 'yaml'], &ft) < 0) | :%s/\s\+$//e
 
 " custom indentation
 autocmd FileType php setlocal shiftwidth=4 softtabstop=4 cindent
@@ -189,6 +189,9 @@ autocmd FileType ruby
 
 " map :W to :w
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+
+" open Ggrep in quickfix window
+autocmd QuickFixCmdPost *grep* cwindow
 
 " stay the fuck out of insert mode
 " inoremap <Left> <NOP>
