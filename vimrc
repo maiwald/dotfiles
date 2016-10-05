@@ -12,6 +12,7 @@ Plug 'godlygeek/tabular'
 Plug 'janko-m/vim-test'
 Plug 'jimenezrick/vimerl'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'junegunn/fzf.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'lmeijvogel/vim-yaml-helper'
 Plug 'mileszs/ack.vim'
@@ -90,22 +91,7 @@ let mapleader = ","
 
 " fzf
 nnoremap <c-p> :FZF<CR>
-function! s:buffer_list()
-  redir => ls
-  silent ls
-  redir END
-  return split(ls, '\n')
-endfunction
-
-function! s:buffer_handler(lines) abort
-  if empty(a:lines)
-    return
-  endif
-  let cmd = get({ 'ctrl-t': 'tabedit | b',
-                \ 'ctrl-x': 'split | b',
-                \ 'ctrl-v': 'vsplit | b' }, remove(a:lines, 0), 'b')
-  execute cmd.matchstr(a:lines[0], '^[ 0-9]*')
-endfunction
+nnoremap <silent> <leader>b :Buffers<CR>
 
 " rails.vim alternate files
 let g:rails_projections = {
@@ -122,12 +108,6 @@ let g:rails_projections = {
 \     "alternate": "import/%s.rb"
 \   }
 \ }
-
-nnoremap <silent> <leader>b :call fzf#run({
-  \ 'source':  <sid>buffer_list(),
-  \ 'options': '--expect=ctrl-t,ctrl-x,ctrl-v',
-  \ 'down':    len(<sid>buffer_list()) + 2,
-  \ 'sink*':   function('<sid>buffer_handler')})<cr>
 
 " comment
 map <D-7> ,c<space>
