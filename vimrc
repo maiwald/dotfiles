@@ -215,5 +215,8 @@ set wildignore+=*/tmp/*,*.scssc,*.sassc,*.class,*.DS_Store
 set wildignore+=*/vendor/bundle/*,*/server/*,*/public/system/*,*/node_modules/*,*/.rsync_cache/*
 set wildignore+=*/public/javascripts/compiled/*,*/app-js/vendor/*
 
+" enable jsx highlighting on js files
+let g:jsx_ext_required = 0
+
 " save before calling make (tests)
 set autowrite
