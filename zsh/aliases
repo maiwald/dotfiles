@@ -34,5 +34,8 @@ alias RAT='RAILS_ENV=test RACK_ENV=test'
 alias brupdate='brew update && brew outdated'
 alias brupgrade='brew upgrade --all && brew cleanup'
 
+# npm
+function ne() {./node_modules/.bin/$@}
+
 # tmux
 alias tmuy='tmux'
