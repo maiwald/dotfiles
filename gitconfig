@@ -15,7 +15,7 @@
 	g = "!source ~/.githelpers && pretty_git_log"
 
 [core]
-	editor = vim
+	editor = nvim
 	autocrlf = input
 	excludesfile = ~/.gitignore
 

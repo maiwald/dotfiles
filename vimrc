@@ -39,9 +39,9 @@ Plug 'vim-scripts/Rename2'
 
 call plug#end()
 
+syntax enable
 set background=light
 colorscheme solarized
-syntax on
 
 " airline
 let g:airline_powerline_fonts = 1
