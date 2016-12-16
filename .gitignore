@@ -2,3 +2,4 @@ vim/plugged/
 vim/autoload/plug.vim.old
 vim/shada/
 vim/undo/*
+config/hub
