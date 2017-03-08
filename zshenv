@@ -1,7 +1,7 @@
 # language
-export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
+export LC_TIME=de_DE.UTF-8
+export LC_NUMERIC=de_DE.UTF-8
 
 # add user .bin
 export PATH="$HOME/.bin:$PATH"
