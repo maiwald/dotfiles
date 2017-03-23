@@ -4,10 +4,10 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'adimit/prolog.vim'
 Plug 'altercation/vim-colors-solarized'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'fishbullet/deoplete-ruby'
 Plug 'godlygeek/tabular'
 Plug 'janko-m/vim-test'
 Plug 'jimenezrick/vimerl'
@@ -34,6 +34,8 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-salve'
 Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/Rename2'
 
@@ -220,3 +222,6 @@ let g:jsx_ext_required = 0
 
 " save before calling make (tests)
 set autowrite
+
+" enable deoplete
+let g:deoplete#enable_at_startup = 1
