@@ -20,6 +20,7 @@ Plug 'mtscout6/vim-cjsx'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
+Plug 'sbdchd/neoformat'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-abolish'
@@ -225,3 +226,8 @@ set autowrite
 
 " enable deoplete
 let g:deoplete#enable_at_startup = 1
+
+" configure neoformat and prettier
+autocmd BufWritePre *.js Neoformat
+autocmd FileType javascript set formatprg=prettier\ --stdin\ --single-quote
+let g:neoformat_try_formatprg = 1
