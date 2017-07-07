@@ -3,4 +3,7 @@
 . ~/.zsh/func
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source /usr/share/nvm/init-nvm.sh
+# initialize Nix
+if [ -e /Users/maiwald/.nix-profile/etc/profile.d/nix.sh ]; then
+  . /Users/maiwald/.nix-profile/etc/profile.d/nix.sh;
+fi
