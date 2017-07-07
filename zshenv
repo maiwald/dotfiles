@@ -15,3 +15,8 @@ export PATH="/usr/local/bin:$PATH"
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
+
+# set terminfo on macOS
+if [[ `uname` == 'Darwin' ]]; then
+  export TERMINFO="/usr/share/terminfo"
+fi
