@@ -1,6 +1,6 @@
-vim/plugged/
+bundle/cache
+config/*
 vim/autoload/plug.vim*
+vim/plugged/
 vim/shada/
 vim/undo/*
-config/hub
-config/yarn
