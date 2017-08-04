@@ -1,5 +1,5 @@
 vim/plugged/
-vim/autoload/plug.vim.old
+vim/autoload/plug.vim*
 vim/shada/
 vim/undo/*
 config/hub

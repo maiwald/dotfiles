@@ -7,6 +7,7 @@ require 'rake'
 desc "install the dot files into user’s home directory"
 task :install do
   replace_all = false
+  install_vim_plug
   Dir['*'].each do |filename|
     next if %w[Rakefile README.rdoc LICENSE utils].include? filename
 
@@ -58,4 +59,13 @@ end
 def create_symlink(pointing_file, pointed_at_file)
   puts "linking #{pointing_file} -> #{pointed_at_file}"
   system %Q{ln -s "#{pointed_at_file}" "#{pointing_file}"}
+end
+
+def install_vim_plug
+  vim_plug_path = File.join(File.dirname(File.realpath(__FILE__)), 'vim/autoload/plug.vim')
+  if File.exist?(vim_plug_path)
+    puts "found vim-plug installation"
+  else
+    system %Q{curl -fLo #{vim_plug_path} --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim}
+  end
 end
