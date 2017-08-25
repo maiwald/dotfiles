@@ -112,6 +112,9 @@ let g:rails_projections = {
 \   }
 \ }
 
+" enable mouse
+set mouse=a
+
 " comment
 map <D-7> ,c<space>
 
