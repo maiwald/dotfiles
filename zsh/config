@@ -61,6 +61,3 @@ export EDITOR=vim
 function chpwd() {
   ls -lAhG
 }
-
-# load rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
