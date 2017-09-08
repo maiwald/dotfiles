@@ -232,5 +232,5 @@ let g:deoplete#enable_at_startup = 1
 
 " configure neoformat and prettier
 autocmd BufWritePre *.js Neoformat
-autocmd FileType javascript set formatprg=prettier\ --stdin\ --single-quote
+autocmd FileType javascript set formatprg=prettier\ --stdin
 let g:neoformat_try_formatprg = 1
