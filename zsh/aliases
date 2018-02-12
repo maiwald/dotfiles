@@ -35,3 +35,8 @@ alias brupgrade='brew upgrade --all && brew cleanup'
 
 # tmux
 alias tmuy='tmux'
+
+if ! [ -x "$(command -v pbcopy)" ]; then
+  alias pbcopy='xsel -bi'
+  alias pbpaste='xsel -bo'
+fi
