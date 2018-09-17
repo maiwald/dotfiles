@@ -118,7 +118,7 @@ set listchars=tab:▸\ ,trail:·,nbsp:·
 
 " cursor
 set cursorline
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+set guicursor=n-v-c:block,i-ci:ver100,r-o-cr:hor100
 
 " cd folder preview
 set wildmenu
@@ -131,6 +131,9 @@ nnoremap Q <NOP>
 set hlsearch " highlight search and when typing
 set ignorecase " case insensitive search
 set smartcase
+
+" s/ preview
+set inccommand=split
 
 " search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
