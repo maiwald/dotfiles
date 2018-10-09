@@ -6,6 +6,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'altercation/vim-colors-solarized'
+Plug 'bhurlow/vim-parinfer'
 Plug 'fishbullet/deoplete-ruby'
 Plug 'godlygeek/tabular'
 Plug 'janko-m/vim-test'
