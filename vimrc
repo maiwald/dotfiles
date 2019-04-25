@@ -2,6 +2,7 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'bhurlow/vim-parinfer'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -38,6 +39,7 @@ Plug 'vim-scripts/Rename2'
 call plug#end()
 
 syntax enable
+filetype plugin indent on
 set background=light
 colorscheme solarized
 
