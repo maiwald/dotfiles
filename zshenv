@@ -20,3 +20,9 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 if [[ `uname` == 'Darwin' ]]; then
   export TERMINFO="/usr/share/terminfo"
 fi
+
+# go lang
+export GOPATH=$HOME/.golang
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin

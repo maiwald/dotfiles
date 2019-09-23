@@ -9,4 +9,6 @@ if [ -e /Users/maiwald/.nix-profile/etc/profile.d/nix.sh ]; then
 fi
 
 # load rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)";
+fi
