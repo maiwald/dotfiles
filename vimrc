@@ -6,7 +6,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'altercation/vim-colors-solarized'
-Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
+Plug 'eraserhd/parinfer-rust', { 'do': 'cargo build --release' }
 Plug 'fishbullet/deoplete-ruby'
 Plug 'godlygeek/tabular'
 Plug 'janko-m/vim-test'
@@ -46,8 +46,8 @@ colorscheme solarized
 let g:airline_powerline_fonts = 1
 let g:airline_section_b = ''
 
-set number
-set numberwidth=4
+set foldcolumn=2
+set nonumber
 set ruler
 set autoread
 set winwidth=90
