@@ -6,6 +6,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'altercation/vim-colors-solarized'
+Plug 'dense-analysis/ale'
 Plug 'eraserhd/parinfer-rust', { 'do': 'cargo build --release' }
 Plug 'fishbullet/deoplete-ruby'
 Plug 'godlygeek/tabular'
@@ -233,3 +234,7 @@ let g:deoplete#enable_at_startup = 1
 autocmd BufWritePre *.js Neoformat
 autocmd FileType javascript set formatprg=prettier\ --stdin
 let g:neoformat_try_formatprg = 1
+
+" configure ALE for clojure linting
+let g:ale_linters = {'clojure': ['clj-kondo']}
+
