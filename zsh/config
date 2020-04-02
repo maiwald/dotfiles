@@ -61,3 +61,8 @@ export EDITOR=vim
 function chpwd() {
   ls -lAhG
 }
+
+# use ripgrep for searching with fzf while gitignoring
+if type rg &> /dev/null; then
+    export FZF_DEFAULT_COMMAND='rg --files'
+fi
