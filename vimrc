@@ -17,7 +17,6 @@ Plug 'lmeijvogel/vim-yaml-helper'
 Plug 'mileszs/ack.vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
-Plug 'sbdchd/neoformat'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-abolish'
@@ -230,11 +229,14 @@ set autowrite
 " enable deoplete
 let g:deoplete#enable_at_startup = 1
 
-" configure neoformat and prettier
-autocmd BufWritePre *.js Neoformat
-autocmd FileType javascript set formatprg=prettier\ --stdin
-let g:neoformat_try_formatprg = 1
+" configure ALE for linting
+let g:ale_linters = {
+      \ 'clojure': ['clj-kondo']
+      \}
 
-" configure ALE for clojure linting
-let g:ale_linters = {'clojure': ['clj-kondo']}
+let g:ale_fixers = {
+      \ 'javascript': ['prettier'],
+      \ 'css': ['prettier']
+      \}
 
+let g:ale_fix_on_save = 1
