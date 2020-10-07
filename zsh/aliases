@@ -19,8 +19,7 @@ alias gds='git diff --staged --find-copies'
 alias gg='git g -n 20 | tail -n 100'
 alias gm='git checkout master'
 alias gp='git pull --rebase --autostash'
-alias gpom='git pull --rebase origin master'
-alias gpp='git pull --rebase && git push'
+alias gpp='git pull --rebase --autostash && git push'
 alias gst='git status'
 
 # ruby
