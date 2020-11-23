@@ -1,5 +1,0 @@
-clear Lock
-clear Control
-keycode 66 = Control_L
-keycode 108 = Multi_key
-add Control = Control_L Control_R
