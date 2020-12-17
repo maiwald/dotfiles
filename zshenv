@@ -5,6 +5,7 @@ export LC_NUMERIC=de_DE.UTF-8
 
 # add user .bin
 export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # add npm bin to path
 export PATH="/usr/local/share/npm/bin:$PATH"
