@@ -1,5 +1,7 @@
 # vim: ft=sh
 
+alias please='sudo'
+
 # neovim
 alias vim='nvim'
 alias vi='nvim'
