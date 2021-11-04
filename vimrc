@@ -10,9 +10,11 @@ Plug 'dense-analysis/ale'
 Plug 'eraserhd/parinfer-rust', { 'do': 'cargo build --release' }
 Plug 'fishbullet/deoplete-ruby'
 Plug 'godlygeek/tabular'
+Plug 'ianks/vim-tsx'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
+Plug 'leafgarland/typescript-vim'
 Plug 'lmeijvogel/vim-yaml-helper'
 Plug 'mileszs/ack.vim'
 Plug 'mxw/vim-jsx'
@@ -280,12 +282,15 @@ let g:deoplete#enable_at_startup = 1
 
 " configure ALE for linting
 let g:ale_linters = {
-      \ 'clojure': ['clj-kondo']
+      \ 'clojure': ['clj-kondo'],
+      \ 'javascript': ['eslint'],
+      \ 'typescriptreact': ['tsserver', 'eslint'],
       \}
 
 let g:ale_fixers = {
       \ 'go': ['gofmt'],
       \ 'javascript': ['prettier'],
+      \ 'typescript': ['prettier'],
       \ 'css': ['prettier'],
       \ 'scss': ['prettier']
       \}
