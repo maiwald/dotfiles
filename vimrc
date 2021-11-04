@@ -63,6 +63,13 @@ set softtabstop=2
 " allow backspace to delete indentation
 set backspace=indent,eol,start
 
+" custom indentation
+autocmd FileType php setlocal shiftwidth=4 softtabstop=4 cindent
+autocmd FileType twig setlocal shiftwidth=4 softtabstop=4
+autocmd FileType java setlocal shiftwidth=4 softtabstop=4
+autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=0
+autocmd FileType gomod setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=0
+
 " allow hiding modified buffers
 set hidden
 
@@ -79,11 +86,6 @@ set undoreload=10000
 
 " remove trailing whitespace
 autocmd BufWritePre * if (index(['markdown', 'yaml'], &ft) < 0) | :%s/\s\+$//e
-
-" custom indentation
-autocmd FileType php setlocal shiftwidth=4 softtabstop=4 cindent
-autocmd FileType twig setlocal shiftwidth=4 softtabstop=4
-autocmd FileType java setlocal shiftwidth=4 softtabstop=4
 
 let maplocalleader = ","
 let mapleader = ","
@@ -114,9 +116,11 @@ set mouse=a
 " comment
 map <D-7> ,c<space>
 
-" display whitespace
+" display whitespace and tabs
 set list
 set listchars=tab:▸\ ,trail:·,nbsp:·
+:highlight MyTabSpace ctermfg=grey
+:match MyTabSpace /\t\| /
 
 " cursor
 set cursorline
@@ -235,6 +239,7 @@ let g:ale_linters = {
       \}
 
 let g:ale_fixers = {
+      \ 'go': ['gofmt'],
       \ 'javascript': ['prettier'],
       \ 'css': ['prettier'],
       \ 'scss': ['prettier']
