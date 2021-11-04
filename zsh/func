@@ -20,6 +20,16 @@ function gru() {
   fi
 }
 
+function hide_desktop() {
+  defaults write com.apple.finder CreateDesktop false
+  killall Finder
+}
+
+function show_desktop() {
+  defaults write com.apple.finder CreateDesktop true
+  killall Finder
+}
+
 # create a default tmux session
 # or attach a session be the same name
 function tnew()
