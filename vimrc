@@ -242,11 +242,6 @@ noremap k gk
 " show 2 status lines
 set laststatus=2
 
-" get out of insert mode quickly
-inoremap kj <Esc>
-inoremap Kj <Esc>
-inoremap KJ <Esc>
-
 " insert newline above/below
 nnoremap <C-J> mao<Esc>`a
 nnoremap <C-K> maO<Esc>`a
