@@ -235,6 +235,8 @@ autocmd QuickFixCmdPost *grep* cwindow
 " move up and down displayed lines
 noremap j gj
 noremap k gk
+noremap <up> g<up>
+noremap <down> g<down>
 
 " show 2 status lines
 set laststatus=2
