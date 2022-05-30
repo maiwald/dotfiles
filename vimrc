@@ -160,9 +160,6 @@ let g:rails_projections = {
 " enable mouse
 set mouse=a
 
-" comment
-map <D-7> ,c<space>
-
 " display whitespace and tabs
 set list
 set listchars=tab:▸\ ,trail:·,nbsp:·
@@ -252,15 +249,6 @@ nnoremap <leader>p :cprevious<cr>
 
 " switch mapping
 let g:switch_mapping = "-"
-
-function! TabularizeRuby()
-  call feedkeys(":Tab /,\<CR>")
-  call feedkeys(":Tab /[\<CR>")
-  call feedkeys(":Tab /]\<CR>")
-endfunction
-map <leader>T :call TabularizeRuby()<CR>
-
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 set wildignore+=*/tmp/*,*.scssc,*.sassc,*.class,*.DS_Store
 set wildignore+=*/vendor/bundle/*,*/server/*,*/public/system/*,*/node_modules/*,*/.rsync_cache/*
