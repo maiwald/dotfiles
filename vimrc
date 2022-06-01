@@ -5,8 +5,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'altercation/vim-colors-solarized'
 Plug 'dense-analysis/ale'
+Plug 'edeneast/nightfox.nvim'
 Plug 'eraserhd/parinfer-rust', { 'do': 'cargo build --release' }
 Plug 'fishbullet/deoplete-ruby'
 Plug 'godlygeek/tabular'
@@ -19,6 +19,8 @@ Plug 'lmeijvogel/vim-yaml-helper'
 Plug 'mileszs/ack.vim'
 Plug 'mxw/vim-jsx'
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
@@ -33,8 +35,6 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-salve'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/Rename2'
 
@@ -42,15 +42,48 @@ call plug#end()
 
 syntax enable
 filetype plugin indent on
-set background=light
-colorscheme solarized
 
-" airline
-let g:airline_powerline_fonts = 1
-let g:airline_section_b = ''
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+set background=light
+colorscheme dayfox
+
+lua << EOF
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'auto',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {},
+    always_divide_middle = true,
+    globalstatus = false,
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'filetype', 'encoding'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  extensions = {}
+}
+EOF
 
 set foldcolumn=2
-set nonumber
+set number
 set ruler
 set autoread
 set winwidth=90
@@ -117,6 +150,35 @@ for _, lsp in ipairs(servers) do
 end
 EOF
 
+" tree sitter
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  -- A list of parser names, or "all"
+  ensure_installed = { "vim", "go", "clojure", "javascript", "html", "scss" },
+
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+
+  highlight = {
+    -- `false` will disable the whole extension
+    enable = true,
+
+    -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
+    -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
+    -- the name of the parser)
+    -- list of language that will be disabled
+    -- disable = { "c", "rust" },
+
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    -- adiitional_vim_regex_highlighting = false,
+  },
+}
+EOF
+
+
 " allow hiding modified buffers
 set hidden
 
@@ -163,8 +225,6 @@ set mouse=a
 " display whitespace and tabs
 set list
 set listchars=tab:▸\ ,trail:·,nbsp:·
-:highlight MyTabSpace ctermfg=grey
-:match MyTabSpace /\t\| /
 
 " cursor
 set cursorline
