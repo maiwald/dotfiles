@@ -17,11 +17,6 @@ export PATH="/usr/local/bin:$PATH"
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 
-# set terminfo on macOS
-if [[ `uname` == 'Darwin' ]]; then
-  export TERMINFO="/usr/share/terminfo"
-fi
-
 # go lang
 export GOPATH=$HOME/.golang
 export GOROOT=/usr/local/opt/go/libexec
