@@ -48,6 +48,7 @@ export SAVEHIST=10000
 export HISTFILE=~/.zsh_history
 
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
+setopt HIST_IGNORE_SPACE         # Do not store commands starting with whitespace.
 setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
 setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
@@ -66,3 +67,6 @@ function chpwd() {
 if type rg &> /dev/null; then
     export FZF_DEFAULT_COMMAND='rg --files'
 fi
+
+# open tmux session launcher
+bindkey -s ^f " tmux-session-launcher\n"

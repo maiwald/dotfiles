@@ -211,6 +211,9 @@ nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 let g:test#strategy = 'dispatch'
 
+" tmux session launcher
+nnoremap <silent> <C-f> :silent ! tmux neww tmux-session-launcher<CR>
+
 autocmd FileType ruby
   \ if expand('%') =~# '_test\.rb$' |
   \   compiler rubyunit | setl makeprg=testrb\ \"%:p\" |

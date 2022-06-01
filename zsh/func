@@ -29,23 +29,3 @@ function show_desktop() {
   defaults write com.apple.finder CreateDesktop true
   killall Finder
 }
-
-# create a default tmux session
-# or attach a session be the same name
-function tnew()
-{
-  SESSION=${PWD##*/}
-  if [[ $# == 1 ]]; then
-    SESSION=$1
-  fi
-
-  tmux has-session -t $SESSION 2>/dev/null
-  if [[ "$?" -ne 0 ]]; then
-    tmux new-session -d -s $SESSION -n shell
-    tmux new-window -t $SESSION -n vim
-    tmux send-keys -t "$SESSION":vim vim C-m
-    tmux select-window -t "$SESSION":shell
-  fi
-
-  tmux attach -t $SESSION
-}
