@@ -15,7 +15,6 @@ if [[ "$?" -ne 0 ]]; then
   tmux new-session -d -s $SESSION_NAME -n shell -c $SESSION_DIR
   tmux new-window -t $SESSION_NAME -n vim -c $SESSION_DIR
   tmux send-keys -t "$SESSION_NAME":vim vim C-m
-  tmux select-window -t "$SESSION_NAME":shell
 fi
 
 if [[ -z $TMUX ]]; then
