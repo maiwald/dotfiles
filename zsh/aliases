@@ -24,6 +24,19 @@ alias gp='git pull --rebase --autostash'
 alias gpp='git pull --rebase --autostash && git push'
 alias gst='git status'
 
+function gri {
+  git rev-parse --verify main &> /dev/null
+  if [ $? -eq 0 ]; then
+    git rebase --interactive --autostash --autosquash origin/main
+  else
+    git rebase --interactive --autostash --autosquash origin/master
+  fi
+}
+
+function gcif {
+  gci --fixup $(git log origin..HEAD --oneline --decorate | fzf | cut -d " " -f 1)
+}
+
 # ruby
 alias b='bundle exec'
 alias be='b'
