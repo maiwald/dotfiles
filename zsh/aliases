@@ -19,10 +19,18 @@ alias gco='git checkout'
 alias gd='git diff --find-copies'
 alias gds='git diff --staged --find-copies'
 alias gg='git g -n 20 | tail -n 100'
-alias gm='git checkout master'
 alias gp='git pull --rebase --autostash'
 alias gpp='git pull --rebase --autostash && git push'
 alias gst='git status'
+
+function gm {
+  git rev-parse --verify main &> /dev/null
+  if [ $? -eq 0 ]; then
+    git checkout main
+  else
+    git checkout master
+  fi
+}
 
 function gri {
   git rev-parse --verify main &> /dev/null
