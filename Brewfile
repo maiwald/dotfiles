@@ -8,6 +8,7 @@ brew "tig"
 brew "tmux"
 brew "reattach-to-user-namespace"
 brew "fzf"
+brew "ripgrep"
 brew "make"
 
 brew "neovim"
