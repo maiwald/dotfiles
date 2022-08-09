@@ -4,12 +4,17 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'dense-analysis/ale'
 Plug 'edeneast/nightfox.nvim'
 Plug 'eraserhd/parinfer-rust', { 'do': 'cargo build --release' }
-Plug 'fishbullet/deoplete-ruby'
 Plug 'godlygeek/tabular'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/vim-vsnip'
 Plug 'ianks/vim-tsx'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
@@ -105,6 +110,46 @@ autocmd FileType java setlocal shiftwidth=4 softtabstop=4
 autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=0
 autocmd FileType gomod setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=0
 
+set completeopt=menu,menuone,noselect
+
+" nvim cmp
+lua <<EOF
+  -- Setup nvim-cmp.
+  local cmp = require'cmp'
+
+  cmp.setup({
+    snippet = {
+      -- REQUIRED - you must specify a snippet engine
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      end,
+    },
+    confirm_opts = {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = false,
+    },
+    window = {
+    },
+    mapping = cmp.mapping.preset.insert({
+      ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-d>'] = cmp.mapping.scroll_docs(4),
+      ['<C-n>'] = cmp.mapping.select_next_item(),
+      ['<C-p>'] = cmp.mapping.select_prev_item(),
+      ['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item(), { "i","c" } ),
+      ['<Down>'] = cmp.mapping(cmp.mapping.select_next_item(), { "i","c" } ),
+      ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-e>'] = cmp.mapping.abort(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    }),
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'vsnip' }, -- For vsnip users.
+    }, {
+      { name = 'buffer' },
+    })
+  })
+EOF
+
 " language servers
 lua << EOF
 require'lspconfig'.clojure_lsp.setup{}
@@ -139,8 +184,10 @@ end
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = { 'clojure_lsp', 'gopls' }
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
+    capabilities = capabilities,
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
@@ -323,9 +370,6 @@ let g:jsx_ext_required = 0
 
 " save before calling make (tests)
 set autowrite
-
-" enable deoplete
-let g:deoplete#enable_at_startup = 1
 
 " configure ALE for linting
 let g:ale_linters = {
