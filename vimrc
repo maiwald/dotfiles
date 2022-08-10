@@ -3,6 +3,7 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'dense-analysis/ale'
 Plug 'edeneast/nightfox.nvim'
@@ -17,14 +18,13 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'ianks/vim-tsx'
 Plug 'janko-m/vim-test'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plug 'junegunn/fzf.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'lmeijvogel/vim-yaml-helper'
 Plug 'mileszs/ack.vim'
 Plug 'mxw/vim-jsx'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
@@ -173,9 +173,8 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<cmd>Telescope lsp_references<CR>', opts)
   buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
@@ -245,9 +244,23 @@ autocmd BufWritePre * if (index(['markdown', 'yaml'], &ft) < 0) | :%s/\s\+$//e
 let maplocalleader = ","
 let mapleader = ","
 
-" fzf
-nnoremap <c-p> :FZF<CR>
-nnoremap <silent> <leader>b :Buffers<CR>
+" telescope
+lua << EOF
+local actions = require("telescope.actions")
+require('telescope').setup{
+  defaults = {
+    -- Default configuration for telescope goes here:
+    -- config_key = value,
+    mappings = {
+      i = {
+        ["<ESC>"] = actions.close
+      }
+    }
+  },
+}
+EOF
+nnoremap <c-p> <cmd>Telescope git_files<CR>
+nnoremap <silent> <leader>b <cmd>Telescope buffers<CR>
 
 " rails.vim alternate files
 let g:rails_projections = {
