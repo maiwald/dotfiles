@@ -195,6 +195,10 @@ for _, lsp in ipairs(servers) do
 end
 EOF
 
+" mouse bindings for code exploration
+nnoremap <silent> <2-LeftMouse> <LeftMouse><cmd>lua vim.lsp.buf.definition()<CR>zz
+nnoremap <silent> <c-RightMouse> <LeftMouse><c-o>zz
+
 " tree sitter
 lua << EOF
 require'nvim-treesitter.configs'.setup {
