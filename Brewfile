@@ -1,5 +1,7 @@
 cask "iterm2"
 cask "chromium"
+cask "karabiner-elements"
+cask "keepingyouawake"
 
 brew "zsh"
 brew "git"
@@ -10,6 +12,9 @@ brew "reattach-to-user-namespace"
 brew "fzf"
 brew "ripgrep"
 brew "make"
+cask "docker"
+
+brew "qmk/qmk/qmk"
 
 brew "neovim"
 brew "tree-sitter"
