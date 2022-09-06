@@ -26,6 +26,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-context'
+Plug 'nvim-treesitter/playground'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-abolish'
@@ -87,7 +89,7 @@ require('lualine').setup {
 EOF
 
 set foldcolumn=2
-set number
+set relativenumber
 set ruler
 set autoread
 set winwidth=90
