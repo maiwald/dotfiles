@@ -22,6 +22,7 @@ brew "make"
 cask "docker"
 
 brew "qmk/qmk/qmk"
+cask "qmk-toolbox"
 
 brew "neovim"
 brew "tree-sitter"
@@ -39,4 +40,3 @@ brew "clj-kondo"
 brew "go"
 brew "rbenv"
 brew "ruby-build"
-brew "pyenv"
