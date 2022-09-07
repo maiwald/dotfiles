@@ -1,14 +1,11 @@
 cask "1password"
 cask "audio-hijack"
-cask "obs"
-cask "vlc"
-mas "HP Easy Scan", id: 967004861
-mas "Pixelmator Pro", id: 1289583905
-
-cask "iterm2"
 cask "chromium"
+cask "iterm2"
 cask "karabiner-elements"
 cask "keepingyouawake"
+cask "obs"
+cask "vlc"
 
 brew "zsh"
 brew "git"
@@ -40,3 +37,7 @@ brew "clj-kondo"
 brew "go"
 brew "rbenv"
 brew "ruby-build"
+
+mas "HP Easy Scan", id: 967004861
+mas "Pixelmator Pro", id: 1289583905
+mas "Slack for Desktop", id: 803453959
