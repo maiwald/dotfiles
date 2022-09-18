@@ -23,7 +23,6 @@ cask "qmk-toolbox"
 
 brew "neovim"
 brew "tree-sitter"
-brew "rust"
 tap "homebrew/cask-fonts"
 cask "font-powerline-symbols"
 cask "font-hack"

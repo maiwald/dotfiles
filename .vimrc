@@ -3,12 +3,11 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'nvim-lua/plenary.nvim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'dense-analysis/ale'
 Plug 'edeneast/nightfox.nvim'
-Plug 'eraserhd/parinfer-rust', { 'do': 'cargo build --release' }
 Plug 'godlygeek/tabular'
+Plug 'guns/vim-sexp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -20,9 +19,9 @@ Plug 'ianks/vim-tsx'
 Plug 'janko-m/vim-test'
 Plug 'leafgarland/typescript-vim'
 Plug 'lmeijvogel/vim-yaml-helper'
-Plug 'mileszs/ack.vim'
 Plug 'mxw/vim-jsx'
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -40,6 +39,7 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-salve'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/Rename2'
@@ -210,6 +210,8 @@ require'nvim-treesitter.configs'.setup {
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
 
+  textobjects = { enable = false },
+  incremental_selection = { enable = false },
   highlight = {
     -- `false` will disable the whole extension
     enable = true,
@@ -267,6 +269,7 @@ require('telescope').setup{
 EOF
 nnoremap <c-p> <cmd>Telescope git_files<CR>
 nnoremap <silent> <leader>b <cmd>Telescope buffers<CR>
+nnoremap <silent> <leader>f <cmd>Telescope live_grep<CR>
 
 " rails.vim alternate files
 let g:rails_projections = {
