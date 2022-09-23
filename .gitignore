@@ -6,6 +6,7 @@
 /.cargo
 /.config/iterm2
 /.config/karabiner
+/.cups
 /.docker
 /.fzf*
 /.lesshst
