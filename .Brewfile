@@ -9,6 +9,7 @@ cask "vlc"
 
 brew "zsh"
 brew "git"
+brew "gh"
 brew "diff-so-fancy"
 brew "tig"
 brew "tmux"

@@ -4,6 +4,7 @@
 /.aws
 /.cache
 /.cargo
+/.config/gh
 /.config/iterm2
 /.config/karabiner
 /.cups
