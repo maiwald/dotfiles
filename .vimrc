@@ -156,6 +156,13 @@ EOF
 lua << EOF
 require'lspconfig'.clojure_lsp.setup{}
 require'lspconfig'.gopls.setup{}
+require'lspconfig'.solargraph.setup{
+  settings = {
+    solargraph = {
+      autoformat = false,
+    }
+  }
+}
 
 local nvim_lsp = require('lspconfig')
 
@@ -184,7 +191,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'clojure_lsp', 'gopls' }
+local servers = { 'clojure_lsp', 'gopls', 'solargraph' }
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
@@ -205,7 +212,7 @@ nnoremap <silent> <c-RightMouse> <LeftMouse><c-o>zz
 lua << EOF
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "vim", "go", "clojure", "javascript", "html", "scss" },
+  ensure_installed = { "vim", "go", "clojure", "javascript", "html", "scss", "ruby"},
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -369,15 +376,17 @@ set autowrite
 let g:ale_linters = {
       \ 'clojure': ['clj-kondo'],
       \ 'javascript': ['eslint'],
-      \ 'typescriptreact': ['tsserver', 'eslint'],
+      \ 'typescriptreact': ['tsserver', 'eslint']
       \}
 
 let g:ale_fixers = {
+      \ 'css': ['prettier'],
       \ 'go': ['gofmt'],
       \ 'javascript': ['prettier'],
-      \ 'typescript': ['prettier'],
-      \ 'css': ['prettier'],
-      \ 'scss': ['prettier']
+      \ 'ruby': ['rubocop'],
+      \ 'scss': ['prettier'],
+      \ 'typescript': ['prettier']
       \}
 
 let g:ale_fix_on_save = 1
+let g:ale_ruby_rubocop_executable = 'bundle'
