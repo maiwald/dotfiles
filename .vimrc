@@ -89,7 +89,9 @@ require('lualine').setup {
 EOF
 
 set foldcolumn=2
+set number
 set relativenumber
+set scrolloff=2
 set ruler
 set autoread
 set winwidth=90
@@ -141,7 +143,7 @@ lua <<EOF
       ['<Down>'] = cmp.mapping(cmp.mapping.select_next_item(), { "i","c" } ),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
