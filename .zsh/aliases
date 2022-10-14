@@ -42,7 +42,14 @@ function gri {
 }
 
 function gcif {
-  gci --fixup $(git log origin..HEAD --oneline --decorate | fzf | cut -d " " -f 1)
+  current_branch=$(git rev-parse --abbrev-ref HEAD)
+  if [ $current_branch = "master" ] || [ $current_branch = "main" ]; then
+    commit=$(git log -n 20 --oneline --decorate | fzf | cut -d " " -f 1)
+  else
+    commit=$(git log origin..HEAD --oneline --decorate | fzf | cut -d " " -f 1)
+  fi
+
+  gci --fixup $commit
 }
 
 # ruby
