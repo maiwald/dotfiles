@@ -65,7 +65,7 @@ function chpwd() {
 
 # use ripgrep for searching with fzf while gitignoring
 if type rg &> /dev/null; then
-    export FZF_DEFAULT_COMMAND='rg --files'
+    export FZF_DEFAULT_COMMAND='rg --files --hidden --glob=\!.git'
 fi
 
 # open tmux session launcher
