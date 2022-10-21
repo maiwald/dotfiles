@@ -302,6 +302,7 @@ set inccommand=split
 map <ESC><ESC> :nohlsearch<CR>
 
 " map NERDTree
+let g:NERDTreeMinimalMenu=1
 map <C-n> :NERDTreeToggle<CR>
 
 " test.vim mappings
