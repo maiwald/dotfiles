@@ -18,6 +18,8 @@ brew "fzf"
 brew "ripgrep"
 brew "make"
 cask "docker"
+brew "bat"
+brew "wget"
 
 brew "qmk/qmk/qmk"
 cask "qmk-toolbox"
