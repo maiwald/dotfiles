@@ -35,6 +35,7 @@ tap "borkdude/brew"
 brew "clj-kondo"
 
 brew "go"
+brew "golangci-lint"
 brew "rbenv"
 brew "ruby-build"
 

@@ -36,6 +36,7 @@ Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-salve'
@@ -264,19 +265,10 @@ let mapleader = ","
 nnoremap <c-p> <cmd>Files<CR>
 nnoremap <silent> <leader>b <cmd>Buffers<CR>
 
-" rails.vim alternate files
-let g:rails_projections = {
-\   "app-js/*.coffee": {
-\     "alternate": "spec-js/%s_spec.coffee"
-\   },
-\   "spec-js/*_spec.coffee": {
-\     "alternate": "app-js/%s.coffee"
-\   },
-\   "import/*.rb": {
-\     "alternate": "spec_import/%s_spec.rb"
-\   },
-\   "spec_import/*_spec.rb": {
-\     "alternate": "import/%s.rb"
+let g:projectionist_heuristics = {
+\   '*.go': {
+\     '*.go': {'alternate': '{}_test.go', 'type': 'source'},
+\     '*_test.go': {'alternate': '{}.go', 'type': 'test'},
 \   }
 \ }
 
@@ -377,13 +369,14 @@ set autowrite
 " configure ALE for linting
 let g:ale_linters = {
       \ 'clojure': ['clj-kondo'],
+      \ 'go': ['gopls', 'golangci-lint'],
       \ 'javascript': ['eslint'],
       \ 'typescriptreact': ['tsserver', 'eslint']
       \}
 
 let g:ale_fixers = {
       \ 'css': ['prettier'],
-      \ 'go': ['gofmt'],
+      \ 'go': ['goimports', 'gofmt'],
       \ 'javascript': ['prettier'],
       \ 'ruby': ['rubocop'],
       \ 'scss': ['prettier'],
@@ -392,3 +385,4 @@ let g:ale_fixers = {
 
 let g:ale_fix_on_save = 1
 let g:ale_ruby_rubocop_executable = 'bundle'
+let g:ale_go_golangci_lint_package = 1
