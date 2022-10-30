@@ -10,6 +10,7 @@
 /.config/iterm2
 /.config/karabiner
 /.cups
+/.dlv
 /.docker
 /.fzf*
 /.gem
