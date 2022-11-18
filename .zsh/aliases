@@ -21,6 +21,7 @@ alias gds='git diff --staged --find-copies'
 alias gg='git g -n 20 | tail -n 100'
 alias gp='git pull --rebase --autostash'
 alias gpp='git pull --rebase --autostash && git push'
+alias grc='git rebase --continue'
 alias gst='git status'
 
 function gm {
@@ -46,7 +47,12 @@ function gcif {
   if [ $current_branch = "master" ] || [ $current_branch = "main" ]; then
     commit=$(git log -n 20 --oneline --decorate | fzf | cut -d " " -f 1)
   else
-    commit=$(git log origin..HEAD --oneline --decorate | fzf | cut -d " " -f 1)
+    git rev-parse --verify main &> /dev/null
+    if [ $? -eq 0 ]; then
+      commit=$(git log origin/main..HEAD --oneline --decorate | fzf | cut -d " " -f 1)
+    else
+      commit=$(git log origin/master..HEAD --oneline --decorate | fzf | cut -d " " -f 1)
+    fi
   fi
 
   gci --fixup $commit
