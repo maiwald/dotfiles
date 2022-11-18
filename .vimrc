@@ -80,7 +80,7 @@ require('lualine').setup {
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {'filename'},
+    lualine_c = {{'filename', path = 1}},
     lualine_x = {'location'},
     lualine_y = {},
     lualine_z = {}
@@ -99,6 +99,7 @@ set autoread
 set winwidth=90
 set splitright
 set splitbelow
+set showcmd
 
 " indentation
 set autoindent
@@ -264,6 +265,7 @@ let maplocalleader = ","
 let mapleader = ","
 
 nnoremap <c-p> <cmd>Files<CR>
+nnoremap <silent> <leader>c <cmd>Commands<CR>
 nnoremap <silent> <leader>b <cmd>Buffers<CR>
 
 let g:projectionist_heuristics = {
