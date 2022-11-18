@@ -10,7 +10,7 @@ fi
 
 SESSION_NAME=$(echo $SESSION_NAME | tr . _)
 
-tmux has-session -t $SESSION_NAME 2>/dev/null
+tmux has-session -t=$SESSION_NAME 2>/dev/null
 if [[ "$?" -ne 0 ]]; then
   tmux new-session -d -s $SESSION_NAME -n shell -c $SESSION_DIR
   tmux new-window -t $SESSION_NAME -n vim -c $SESSION_DIR
