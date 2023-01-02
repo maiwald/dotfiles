@@ -1,0 +1,11 @@
+{
+  "iferror": {
+    "prefix": ["ife"],
+    "body": [
+      "if err != nil {",
+      "\treturn ${1:err} ",
+      "}"
+    ],
+    "description": "If err != nil"
+  }
+}
