@@ -2,6 +2,8 @@
 *.DS_Store
 *.idea
 /.CFUserTextEncoding
+/.NERDTreeBookmarks
+/.Trash
 /.aws
 /.bundle/cache
 /.cache
