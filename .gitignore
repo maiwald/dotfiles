@@ -5,6 +5,7 @@
 /.NERDTreeBookmarks
 /.Trash
 /.aws
+/.b2_account_info
 /.bundle/cache
 /.cache
 /.cargo
@@ -22,6 +23,7 @@
 /.local
 /.m2
 /.npm
+/.nvm
 /.pyenv
 /.rbenv
 /.solargraph
@@ -37,6 +39,7 @@
 /.zsh_history
 /.zsh_sessions
 /Applications
+/Backup
 /Desktop
 /Documents
 /Downloads
