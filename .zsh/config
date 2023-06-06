@@ -28,7 +28,7 @@ precmd () {
 }
 
 setopt prompt_subst
-PROMPT='%F{green}%T %F{red}| %F{yellow}%3~%F{clear}${vcs_info_msg_0_}$ %b'
+PROMPT='%F{green}%T %F{yellow}| %F{red}%3~%F{clear}${vcs_info_msg_0_}$ %b'
 
 # fix emacs movement in tmux
 bindkey -e
