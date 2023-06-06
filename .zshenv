@@ -14,9 +14,6 @@ export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-
 # go lang
 export GOPATH=$HOME/.golang
 export GOROOT=/opt/homebrew/opt/go/libexec
