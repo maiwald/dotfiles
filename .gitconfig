@@ -1,36 +1,46 @@
 [user]
-  name = Luciano Maiwald
-  email = mail@luciano-maiwald.de
+    name = Luciano Maiwald
+    email = mail@luciano-maiwald.de
 
 [github]
-  user = maiwald
+    user = maiwald
 
 [color]
-  status = auto
-  branch = auto
-  diff = auto
-  interactive = auto
+    status = auto
+    branch = auto
+    diff = auto
+    interactive = auto
 
 [alias]
-  g = "!source ~/.githelpers && pretty_git_log"
-  b = "!source ~/.githelpers && pretty_git_branch"
+    g = "!source ~/.githelpers && pretty_git_log"
+    b = "!source ~/.githelpers && pretty_git_branch"
 
 [core]
-  editor = nvim
-  autocrlf = input
-  excludesfile = ~/.gitignore
-  pager = diff-so-fancy | less --tabs 4 -RFX
-  precomposeUnicode = true
+    editor = nvim
+    autocrlf = input
+    excludesfile = ~/.gitignore
+    pager = diff-so-fancy | less --tabs 4 -RFX
+    precomposeUnicode = true
 
 [push]
-  default = simple
-  autoSetupRemote = true
+    default = simple
+    autoSetupRemote = true
 
 [branch]
-  autosetuprebase = always
+    autosetuprebase = always
 
 [diff]
-  algorithm = patience
+    algorithm = patience
+    tool = nvimdiff
 
 [init]
-  defaultBranch = main
+    defaultBranch = main
+
+[url "git@gitlab2.holzbruecke7.de:"]
+    insteadOf = https://gitlab2.holzbruecke7.de/
+
+[difftool]
+    prompt = true
+
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
