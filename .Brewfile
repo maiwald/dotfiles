@@ -2,7 +2,7 @@ cask "signal"
 cask "1password"
 mas "1Password for Safari", id: 1569813296
 cask "audio-hijack"
-cask "chromium"
+cask "brave-browser"
 cask "iterm2"
 cask "karabiner-elements"
 cask "keepingyouawake"
