@@ -22,7 +22,10 @@ return require('packer').startup(function(use)
     use 'nvim-treesitter/playground'
 
     use 'nvim-lualine/lualine.nvim'
-    use 'airblade/vim-gitgutter'
+    use {
+        'airblade/vim-gitgutter',
+        branch = 'main'
+    }
     use 'preservim/nerdtree'
 
     use {
