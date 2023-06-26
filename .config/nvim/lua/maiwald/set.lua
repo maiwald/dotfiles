@@ -3,7 +3,7 @@ vim.opt.scrolloff = 2
 vim.opt.foldcolumn = "2"
 vim.opt.ruler = true
 vim.opt.cursorline = true
-vim.opt.guicursor="n-v-c:block,i-ci:ver100,r-o-cr:hor100"
+vim.opt.guicursor = "n-v-c:block,i-ci:ver100,r-o-cr:hor100"
 vim.opt.mouse = "a"
 
 vim.opt.tabstop = 4

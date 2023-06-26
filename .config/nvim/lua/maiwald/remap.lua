@@ -1,5 +1,5 @@
 vim.keymap.set("n", " ", "<nop>")
-vim.g.mapleader =  " "
+vim.g.mapleader = " "
 
 -- disable Ex mode
 vim.keymap.set("n", "Q", "<nop>")

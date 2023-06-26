@@ -6,13 +6,13 @@
 -- }
 
 vim.g.ale_fixers = {
-    ['css'] = {'prettier'},
-    ['go'] = {'goimports', 'gofmt'},
-    ['javascript'] = {'prettier'},
-    ['json'] = {'prettier'},
-    ['ruby'] = {'rubocop'},
-    ['scss'] = {'prettier'},
-    ['typescript'] = {'prettier'},
+    ['css'] = { 'prettier' },
+    ['go'] = { 'goimports', 'gofmt' },
+    ['javascript'] = { 'prettier' },
+    ['json'] = { 'prettier' },
+    ['ruby'] = { 'rubocop' },
+    ['scss'] = { 'prettier' },
+    ['typescript'] = { 'prettier' },
 }
 
 vim.g.ale_fix_on_save = 1
