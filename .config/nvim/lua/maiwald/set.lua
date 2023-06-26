@@ -1,5 +1,4 @@
 vim.opt.number = true
-vim.opt.relativenumber = true
 vim.opt.scrolloff = 2
 vim.opt.foldcolumn = "2"
 vim.opt.ruler = true
