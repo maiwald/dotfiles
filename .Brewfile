@@ -1,4 +1,3 @@
-cask "signal"
 cask "1password"
 mas "1Password for Safari", id: 1569813296
 cask "audio-hijack"
