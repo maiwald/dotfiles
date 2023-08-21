@@ -10,6 +10,7 @@ vim.g.ale_fixers = {
     ['go'] = { 'goimports', 'gofmt' },
     ['javascript'] = { 'prettier' },
     ['json'] = { 'prettier' },
+    ['jsonc'] = { 'prettier' },
     ['ruby'] = { 'rubocop' },
     ['scss'] = { 'prettier' },
     ['typescript'] = { 'prettier' },
