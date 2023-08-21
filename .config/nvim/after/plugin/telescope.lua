@@ -8,12 +8,18 @@ require("telescope").setup({
             },
         },
     },
+    pickers = {
+        buffers = {
+            ignore_current_buffer = true,
+            sort_mru = true,
+        },
+    },
 })
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<C-p>', builtin.git_files, {})
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 
-vim.keymap.set('n', '<leader>sg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>sp', builtin.find_files, {})
-vim.keymap.set('n', '<leader>ss', builtin.git_status, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fp', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fs', builtin.git_status, {})
