@@ -34,12 +34,18 @@ function gm {
 }
 
 function gri {
-  git rev-parse --verify main &> /dev/null
-  if [ $? -eq 0 ]; then
-    git rebase --interactive --autostash --autosquash origin/main
+  local BRANCH
+  if [ $# -eq 1 ]; then
+    BRANCH=$1
   else
-    git rebase --interactive --autostash --autosquash origin/master
+    git rev-parse --verify main &> /dev/null
+    if [ $? -eq 0 ]; then
+      BRANCH=origin/main
+    else
+      BRANCH=origin/master
+    fi
   fi
+  git rebase --interactive --autostash --autosquash $BRANCH
 }
 
 function gcif {
