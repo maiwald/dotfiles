@@ -24,3 +24,6 @@ vim.keymap.set("n", "<C-f>", "<cmd>:silent ! tmux neww tmux-session-launcher<CR>
 -- more comfortable moving through search results
 vim.keymap.set("n", "<leader>n", "<cmd>:cnext<cr>")
 vim.keymap.set("n", "<leader>p", "<cmd>:cprevious<cr>")
+
+-- remap :W to :w
+vim.api.nvim_create_user_command("W", "w", {})
