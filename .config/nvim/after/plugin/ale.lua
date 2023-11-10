@@ -8,12 +8,14 @@
 vim.g.ale_fixers = {
     ['css'] = { 'prettier' },
     ['go'] = { 'goimports', 'gofmt' },
+    ['html'] = { 'prettier' },
     ['javascript'] = { 'prettier' },
     ['json'] = { 'prettier' },
     ['jsonc'] = { 'prettier' },
     ['ruby'] = { 'rubocop' },
     ['scss'] = { 'prettier' },
     ['typescript'] = { 'prettier' },
+    ['xhtml'] = { 'prettier' },
 }
 
 vim.g.ale_fix_on_save = 1
