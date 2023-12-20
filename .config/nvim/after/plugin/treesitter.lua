@@ -47,6 +47,8 @@ require 'nvim-treesitter.configs'.setup {
                 ["af"] = "@function.outer",
                 ["if"] = "@function.inner",
                 ["ac"] = "@class.outer",
+                ["ia"] = "@parameter.inner",
+                ["aa"] = "@parameter.outer",
             },
             -- You can choose the select mode (default is charwise 'v')
             --
@@ -74,15 +76,19 @@ require 'nvim-treesitter.configs'.setup {
             enable = true,
             set_jumps = true, -- whether to set jumps in the jumplist
             goto_next_start = {
+                ["]a"] = "@parameter.inner",
                 ["]m"] = "@function.outer",
             },
             goto_next_end = {
+                ["]A"] = "@parameter.inner",
                 ["]M"] = "@function.outer",
             },
             goto_previous_start = {
+                ["[a"] = "@parameter.inner",
                 ["[m"] = "@function.outer",
             },
             goto_previous_end = {
+                ["[A"] = "@parameter.inner",
                 ["[M"] = "@function.outer",
             },
         },
