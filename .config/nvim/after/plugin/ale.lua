@@ -1,9 +1,8 @@
--- vim.g.ale_linters = {
---     ['clojure'] = { 'clj-kondo' },
---     ['go'] = { 'golangci-lint' },
---     ['javascript'] = { 'eslint' },
---     ['typescriptreact'] = { 'tsserver', 'eslint' }
--- }
+vim.g.ale_linters_explicit = 1
+vim.g.ale_linters = {
+    ['clojure'] = { 'clj-kondo' },
+    ['go'] = { 'golangci-lint' },
+}
 
 vim.g.ale_fixers = {
     ['css'] = { 'prettier' },
@@ -15,6 +14,7 @@ vim.g.ale_fixers = {
     ['ruby'] = { 'rubocop' },
     ['scss'] = { 'prettier' },
     ['typescript'] = { 'prettier' },
+    ['vue'] = { 'prettier' },
     ['xhtml'] = { 'prettier' },
 }
 
