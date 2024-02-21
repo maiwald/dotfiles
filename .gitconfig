@@ -29,6 +29,9 @@
 [branch]
     autosetuprebase = always
 
+[commit]
+    verbose = true
+
 [diff]
     algorithm = patience
     tool = nvimdiff
