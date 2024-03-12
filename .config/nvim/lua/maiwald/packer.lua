@@ -29,7 +29,8 @@ return require('packer').startup(function(use)
         'airblade/vim-gitgutter',
         branch = 'main'
     }
-    use 'preservim/nerdtree'
+
+    use 'nvim-tree/nvim-tree.lua'
 
     use {
         'VonHeikemen/lsp-zero.nvim',
