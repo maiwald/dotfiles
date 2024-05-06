@@ -31,8 +31,6 @@ brew "neovim"
 brew "tree-sitter"
 tap "homebrew/cask-fonts"
 cask "font-meslo-lg-nerd-font"
-cask "font-hack-nerd-font"
-cask "font-monaspace"
 
 brew "clojure"
 tap "clojure-lsp/brew"
