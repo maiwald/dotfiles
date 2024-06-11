@@ -47,7 +47,6 @@ return require('packer').startup(function(use)
     use 'AndrewRadev/splitjoin.vim'
     use 'AndrewRadev/switch.vim'
     use 'tpope/vim-abolish'
-    use 'tpope/vim-commentary'
     use 'tpope/vim-dispatch'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-projectionist'
