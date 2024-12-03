@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Default values
+PORT=8000
+DIRECTORY="."
+
+# Parse options
+while getopts ":p:d:" opt; do
+  case $opt in
+    p) PORT=$OPTARG ;;       # Set the port
+    d) DIRECTORY=$OPTARG ;;  # Set the directory
+    *) echo "Usage: serve [-p port] [-d directory]" && exit 1 ;;
+  esac
+done
+
+# Start the server
+echo "Serving directory '$DIRECTORY' on port $PORT"
+python3 -m http.server "$PORT" -d "$DIRECTORY"
