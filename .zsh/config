@@ -18,10 +18,10 @@ zstyle ':vcs_info:*' stagedstr '%F{28}●'
 zstyle ':vcs_info:*' unstagedstr '%F{11}●'
 
 precmd () {
-    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
-        zstyle ':vcs_info:*' formats ' [%b%c%u%F{clear}]'
-    } else {
+    if [[ -n $(git status --porcelain 2>/dev/null | grep '^??') ]] {
         zstyle ':vcs_info:*' formats ' [%b%c%u%F{red}●%F{clear}]'
+    } else {
+        zstyle ':vcs_info:*' formats ' [%b%c%u%F{clear}]'
     }
 
     vcs_info
