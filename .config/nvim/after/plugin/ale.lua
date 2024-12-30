@@ -5,12 +5,14 @@ vim.g.ale_linters = {
 }
 
 vim.g.ale_fixers = {
+    ['astro'] = { 'prettier' },
     ['css'] = { 'prettier' },
     ['go'] = { 'goimports', 'gofmt' },
     ['html'] = { 'prettier' },
     ['javascript'] = { 'prettier' },
     ['json'] = { 'prettier' },
     ['jsonc'] = { 'prettier' },
+    ['mjs'] = { 'prettier' },
     ['ruby'] = { 'rubocop' },
     ['scss'] = { 'prettier' },
     ['typescript'] = { 'prettier' },
