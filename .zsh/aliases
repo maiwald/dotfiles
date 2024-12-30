@@ -23,6 +23,8 @@ alias gp='git pull --rebase --autostash'
 alias gpp='git pull --rebase --autostash && git push'
 alias grc='git rebase --continue'
 alias gst='git status'
+alias gcof='git checkout $(git branch | fzf)'
+alias gbd='git branch -d $(git branch | fzf)'
 
 function gm {
   git rev-parse --verify main &> /dev/null
