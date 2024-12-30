@@ -12,8 +12,8 @@
     interactive = auto
 
 [alias]
-    g = "!source ~/.githelpers && pretty_git_log"
-    b = "!source ~/.githelpers && pretty_git_branch"
+    g = "!source ~/.config/git/helpers && pretty_git_log"
+    b = "!source ~/.config/git/helpers && pretty_git_branch"
 
 [core]
     editor = nvim
