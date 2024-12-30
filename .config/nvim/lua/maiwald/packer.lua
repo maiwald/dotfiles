@@ -61,4 +61,10 @@ return require('packer').startup(function(use)
     }
 
     use 'github/copilot.vim'
+    use {
+        'davidmh/mdx.nvim',
+        requires = {
+            'nvim-treesitter/nvim-treesitter'
+        },
+    }
 end)
