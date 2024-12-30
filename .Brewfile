@@ -9,6 +9,8 @@ cask "obs"
 cask "vlc"
 cask "rectangle"
 cask "easy-move-plus-resize"
+cask "grandperspective"
+cask "energiza"
 
 brew "zsh"
 brew "git"
@@ -25,11 +27,9 @@ brew "wget"
 brew "b2-tools"
 
 brew "qmk/qmk/qmk"
-cask "qmk-toolbox"
 
 brew "neovim"
 brew "tree-sitter"
-tap "homebrew/cask-fonts"
 cask "font-meslo-lg-nerd-font"
 
 brew "clojure"
