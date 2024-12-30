@@ -59,4 +59,6 @@ return require('packer').startup(function(use)
             { 'tpope/vim-dadbod' },
         },
     }
+
+    use 'github/copilot.vim'
 end)
