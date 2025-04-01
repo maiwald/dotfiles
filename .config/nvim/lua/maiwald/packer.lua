@@ -33,13 +33,6 @@ return require('packer').startup(function(use)
     use 'nvim-tree/nvim-tree.lua'
 
     use 'neovim/nvim-lspconfig'
-    use { 'hrsh7th/nvim-cmp',
-        requires = {
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-vsnip',
-            'hrsh7th/vim-vsnip'
-        }
-    }
 
     use 'dense-analysis/ale'
     use 'vim-test/vim-test'

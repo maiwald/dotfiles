@@ -41,3 +41,10 @@ vim.opt.updatetime = 100
 
 vim.opt.spell = true
 vim.opt.spelllang = "en,de"
+
+vim.diagnostic.config({
+    virtual_text = true,
+    signs = true,
+    underline = false,
+    severity_sort = true,
+})
