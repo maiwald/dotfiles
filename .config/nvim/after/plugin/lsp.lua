@@ -27,16 +27,17 @@ lspconfig.lua_ls.setup({
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
     callback = function(event)
+        local bufnr = event.buf
+        local opts = { noremap = true, silent = true }
+        local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client and client:supports_method('textDocument/completion') then
             vim.lsp.completion.enable(true, client.id, event.buf, { autocomplete = true })
+            buf_set_keymap('i', '<C-Space>', '<cmd>lua vim.lsp.completion.get()<cr>', opts)
         end
 
-        local bufnr = event.buf
-        local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-
         -- Mappings.
-        local opts = { noremap = true, silent = true }
 
         -- See `:help vim.lsp.*` for documentation on any of the below functions
         buf_set_keymap('n', 'gD', '<cmd>vsp<CR><cmd>lua vim.lsp.buf.definition()<CR>zz', opts)
