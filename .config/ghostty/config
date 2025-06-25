@@ -1,0 +1,7 @@
+cursor-style = block
+shell-integration-features = no-cursor
+theme = nightfox
+font-family = "MesloLGM Nerd Font Mono"
+macos-titlebar-style = native
+window-theme = system
+window-padding-x = 4
