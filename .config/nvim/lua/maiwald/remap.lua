@@ -27,3 +27,6 @@ vim.keymap.set("n", "<leader>p", "<cmd>:cprevious<cr>")
 
 -- remap :W to :w
 vim.api.nvim_create_user_command("W", "w", {})
+
+-- rspec macro
+vim.keymap.set('n', '<Leader>r', "gg<C-V>eGkd:%s/ #.*$/ \\<CR>ggOb rspec \\<ESC>");
