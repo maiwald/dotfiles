@@ -8,7 +8,12 @@ return {
 
     },
     'AndrewRadev/splitjoin.vim',
-    'AndrewRadev/switch.vim',
+    {
+        'AndrewRadev/switch.vim',
+        init = function()
+            vim.g.switch_mapping = '-'
+        end,
+    },
     'tpope/vim-abolish',
     'tpope/vim-dispatch',
     'tpope/vim-fugitive',
