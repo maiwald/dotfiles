@@ -1,12 +1,22 @@
-local lspconfig = require('lspconfig')
+vim.lsp.config('ts_ls', {
+    init_options = {
+        plugins = {
+            {
+                name = "@vue/typescript-plugin",
+                location = "",
+                languages = { "javascript", "typescript", "vue" },
+            },
+        },
+    },
+    filetypes = {
+        "javascript",
+        "typescript",
+        "vue",
+        "typescriptreact",
+    },
+})
 
-lspconfig.clojure_lsp.setup({})
-lspconfig.eslint.setup({})
-lspconfig.gopls.setup({})
-lspconfig.solargraph.setup({})
-lspconfig.ts_ls.setup({})
-lspconfig.zls.setup({})
-lspconfig.lua_ls.setup({
+vim.lsp.config('lua_ls', {
     settings = {
         Lua = {
             runtime = {
@@ -23,6 +33,8 @@ lspconfig.lua_ls.setup({
         }
     }
 })
+
+vim.lsp.enable({'eslint', 'gopls', 'solargraph', 'ts_ls', 'zls', 'lua_ls'})
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
