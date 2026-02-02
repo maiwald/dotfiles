@@ -33,12 +33,6 @@ brew "neovim"
 brew "tree-sitter"
 cask "font-meslo-lg-nerd-font"
 
-brew "clojure"
-tap "clojure-lsp/brew"
-brew "clojure-lsp-native"
-tap "borkdude/brew"
-brew "clj-kondo"
-
 brew "go"
 brew "golangci-lint"
 brew "lua-language-server"
