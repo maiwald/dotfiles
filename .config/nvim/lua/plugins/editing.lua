@@ -2,10 +2,10 @@ return {
     {
         'ggandor/leap.nvim',
         dependencies = { 'tpope/vim-repeat' },
-        init = function()
-            require('leap').add_default_mappings()
-        end,
-
+        keys = {
+            { 's', '<Plug>(leap-forward)', desc = 'Leap forward', mode = { 'n', 'x', 'o' } },
+            { 'S', '<Plug>(leap-backward)', desc = 'Leap backward', mode = { 'n', 'x', 'o' } },
+        },
     },
     'AndrewRadev/splitjoin.vim',
     {
