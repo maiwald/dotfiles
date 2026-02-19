@@ -25,7 +25,6 @@ cask "docker"
 brew "bat"
 brew "wget"
 brew "stow"
-brew "b2-tools"
 
 brew "qmk/qmk/qmk"
 
