@@ -8,5 +8,8 @@ return {
             'DBUI',
             'DBUIToggle',
         },
+        keys = {
+            { '<leader>d', '<cmd>:tab DBUI<CR>', desc = 'Open DBUI' },
+        },
     }
 }
