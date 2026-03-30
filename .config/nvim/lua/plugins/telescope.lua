@@ -54,7 +54,13 @@ return {
         keys = {
             { "<C-p>",      "<cmd>Telescope git_files<cr>",  desc = "Telescope git_files" },
             { "<leader>b",  "<cmd>Telescope buffers<cr>",    desc = "Telescope buffers" },
-            { "<leader>fg", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",  desc = "Telescope live_grep" },
+            {
+                "<leader>fg",
+                function()
+                    require("telescope").extensions.live_grep_args.live_grep_args()
+                end,
+                desc = "Telescope live_grep",
+            },
             { "<leader>fp", "<cmd>Telescope find_files<cr>", desc = "Telescope find_files" },
             { "<leader>fs", "<cmd>Telescope git_status<cr>", desc = "Telescope git_status" },
         },
