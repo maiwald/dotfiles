@@ -16,7 +16,13 @@ return {
     },
     'tpope/vim-abolish',
     'tpope/vim-dispatch',
-    'tpope/vim-fugitive',
+    {
+        'tpope/vim-fugitive',
+        lazy = false,
+        keys = {
+            { "<leader>gl", "<cmd>tab Git log --graph --pretty=\"tformat:%h %an %ad | %s\" --date=short<cr>", desc = "Git log" },
+        },
+    },
     'tpope/vim-projectionist',
     'tpope/vim-repeat',
     'tpope/vim-surround'
