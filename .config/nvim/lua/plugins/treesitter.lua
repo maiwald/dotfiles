@@ -37,6 +37,32 @@ return {
         'nvim-treesitter/nvim-treesitter-textobjects',
         branch = 'main',
         keys = {
+            -- class definition
+            {
+                "]k",
+                function()
+                    require("nvim-treesitter-textobjects.move").goto_next_start("@class.outer", "textobjects")
+                end,
+            },
+            {
+                "]K",
+                function()
+                    require("nvim-treesitter-textobjects.move").goto_next_end("@class.outer", "textobjects")
+                end,
+            },
+            {
+                "[k",
+                function()
+                    require("nvim-treesitter-textobjects.move").goto_previous_start("@class.outer", "textobjects")
+                end,
+            },
+            {
+                "[K",
+                function()
+                    require("nvim-treesitter-textobjects.move").goto_previous_end("@class.outer", "textobjects")
+                end,
+            },
+
             -- function definition
             {
                 "]m",
