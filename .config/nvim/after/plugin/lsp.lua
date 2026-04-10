@@ -34,7 +34,14 @@ vim.lsp.config('lua_ls', {
     }
 })
 
-vim.lsp.enable({'eslint', 'gopls', 'solargraph', 'ts_ls', 'zls', 'lua_ls'})
+vim.lsp.enable({
+    'eslint',
+    'gopls',
+    'kotlin_lsp',
+    'lua_ls',
+    'ts_ls',
+    'zls',
+})
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
