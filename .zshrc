@@ -7,4 +7,6 @@ if command -v fzf >/dev/null 2>&1; then
 fi
 
 # load fnm
-eval "$(fnm env --use-on-cd)"
+if command -v fnm >/dev/null 2>&1; then
+    eval "$(fnm env --use-on-cd)"
+fi
