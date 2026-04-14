@@ -1,0 +1,13 @@
+brew "go"
+brew "golangci-lint"
+brew "lua-language-server"
+brew "qmk/qmk/qmk"
+
+cask "energiza"
+cask "grandperspective"
+cask "obs"
+cask "vlc"
+
+mas "1Password for Safari", id: 1569813296
+mas "HP Easy Scan", id: 967004861
+mas "Pixelmator Pro", id: 1289583905
