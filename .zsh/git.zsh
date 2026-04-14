@@ -61,7 +61,7 @@ ghc() {
 }
 
 gru() {
-    read "reply?Reset to upstream, are you sure? "
+    read "reply?Reset to upstream, are you sure? [y/N]"
     if [[ "$reply" =~ ^[Yy]$ ]]; then
         git fetch && git reset --hard @{u}
     fi
