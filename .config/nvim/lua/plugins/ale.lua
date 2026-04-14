@@ -10,11 +10,10 @@ return {
             }
 
             vim.g.ale_fixers = {
-                astro = { 'prettier' },
                 css = { 'prettier' },
                 go = { 'goimports', 'gofmt' },
                 html = { 'prettier' },
-                -- ['javascript'] = { 'prettier' },
+                javascript = { 'prettier' },
                 json = { 'prettier' },
                 jsonc = { 'prettier' },
                 mjs = { 'prettier' },
