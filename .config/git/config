@@ -39,9 +39,6 @@
 [init]
     defaultBranch = main
 
-[url "git@gitlab2.holzbruecke7.de:"]
-    insteadOf = https://gitlab2.holzbruecke7.de/
-
 [difftool]
     prompt = true
 
