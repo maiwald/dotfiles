@@ -1,12 +1,20 @@
-. ~/.zsh/config
-. ~/.zsh/aliases
+# Loaded for interactive shells
 
-# load fzf keybindings and fuzzy completion
-if command -v fzf >/dev/null 2>&1; then
-    source <(fzf --zsh)
-fi
+source ~/.zsh/shell.zsh
+source ~/.zsh/aliases.zsh
 
-# load fnm
-if command -v fnm >/dev/null 2>&1; then
-    eval "$(fnm env --use-on-cd)"
-fi
+# Tool setup
+source ~/.zsh/git.zsh
+source ~/.zsh/go.zsh
+source ~/.zsh/zvm.zsh
+source ~/.zsh/bat.zsh
+source ~/.zsh/docker.zsh
+source ~/.zsh/fnm.zsh
+source ~/.zsh/fzf.zsh
+
+# Completion system
+autoload -Uz compinit
+compinit
+
+# Optional machine-local overrides
+[[ -f ~/.zsh/local.zsh ]] && source ~/.zsh/local.zsh
