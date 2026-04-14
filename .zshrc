@@ -1,6 +1,10 @@
 . ~/.zsh/config
 . ~/.zsh/aliases
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# load fzf keybindings and fuzzy completion
+if command -v fzf >/dev/null 2>&1; then
+    source <(fzf --zsh)
+fi
 
 # load fnm
 eval "$(fnm env --use-on-cd)"
