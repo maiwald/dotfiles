@@ -1,7 +1,6 @@
 brew "bat"
 brew "diff-so-fancy"
 brew "fzf"
-brew "gh"
 brew "git"
 brew "make"
 brew "neovim"
