@@ -1,5 +1,7 @@
 # Loaded for interactive shells
 
+eval "$(brew shellenv)"
+
 source ~/.zsh/shell.zsh
 source ~/.zsh/aliases.zsh
 
