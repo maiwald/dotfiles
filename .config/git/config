@@ -12,14 +12,13 @@
     interactive = auto
 
 [alias]
-    g = "!source ~/.config/git/helpers && pretty_git_log"
+    g = "!gitl"
     b = "!source ~/.config/git/helpers && pretty_git_branch"
 
 [core]
     editor = nvim
     autocrlf = input
     excludesfile = ~/.config/git/global.gitignore
-    pager = diff-so-fancy | less --tabs 4 -RFX
     precomposeUnicode = true
 
 [push]
@@ -50,3 +49,7 @@
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
     required = true
+
+[pager]
+	diff = gitl
+	show = gitl

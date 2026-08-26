@@ -20,15 +20,6 @@ BRANCH_CONTENTS="%(contents:subject)"
 
 BRANCH_FORMAT="$BRANCH_PREFIX}$BRANCH_REF}$BRANCH_HASH}$BRANCH_DATE}$BRANCH_AUTHOR}$BRANCH_CONTENTS"
 
-show_git_head() {
-    pretty_git_log -1
-    git show -p --pretty="tformat:"
-}
-
-pretty_git_log() {
-    gitl
-}
-
 pretty_git_branch() {
     git branch -v --color=always --format=${BRANCH_FORMAT} $* | pretty_git_format
 }
