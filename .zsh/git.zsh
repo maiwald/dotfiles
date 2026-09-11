@@ -13,6 +13,7 @@ alias gp='git pull --rebase --autostash'
 alias gpp='git pull --rebase --autostash && git push'
 alias grc='git rebase --continue'
 alias gst='git status'
+alias tig='gitl'
 
 gm() {
     git rev-parse --verify main &> /dev/null
