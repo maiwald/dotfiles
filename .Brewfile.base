@@ -12,7 +12,7 @@ brew "wget"
 brew "zsh"
 
 cask "docker"
-cask "easy-move-plus-resize"
+cask "easy-move+resize"
 cask "font-meslo-lg-nerd-font"
 cask "ghostty"
 cask "keepingyouawake"
