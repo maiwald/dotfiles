@@ -7,6 +7,7 @@ return {
             javascript = { 'prettier' },
             json = { 'prettier' },
             jsonc = { 'prettier' },
+            kotlin = { 'ktlint' },
             scss = { 'prettier' },
             typescript = { 'prettier' },
             typescriptreact = { 'prettier' },

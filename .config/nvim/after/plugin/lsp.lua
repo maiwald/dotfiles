@@ -22,6 +22,7 @@ require('mason-tool-installer').setup({
         'kotlin-lsp',                 -- server: kotlin_lsp (installed only, enabled manually below)
 
         'prettier',        -- formatter
+        'ktlint',          -- formatter
         'golangci-lint',   -- linter
     },
     auto_update = false,
